@@ -42,49 +42,42 @@
     </section>
 
     <article class="article-body">
+      <h2>Meet Hope and Helen</h2>
       <p>
-        Most retirement conversations focus on average returns. How
-        much did the market return last year? What is the long term
-        average? What rate of return should I assume in my plan?
+        Hope and Helen are twin sisters. They turned 60 this year. Both
+        have worked hard their entire careers and both have saved
+        $500,000 for retirement. They have the same goal: generate
+        $40,000 a year in retirement income starting at age 70 and make
+        their money last as long as they do.
+      </p>
+      <p>Their strategies could not be more different.</p>
+      <p>
+        Hope is confident in the market. She keeps her full $500,000
+        invested and lets it grow for 10 years. By age 70 her portfolio
+        has dropped to $454,800 after weathering two major market
+        crashes. She begins withdrawing $40,000 a year and trusts that
+        the market will continue to recover.
       </p>
       <p>
-        Those are reasonable questions during accumulation. But
-        retirement changes the math completely.
+        Helen is a planner. At age 60 she splits her $500,000. She
+        allocates $284,380 to a Pension Strategy and leaves the
+        remaining $215,620 in the market. Helen's investment portfolio
+        has also
+        suffered the same market losses, dropping to just $134,445 at
+        its lowest point in year 3 at age 62. But here is the
+        difference: Helen
+        never needs to touch it. Her pension is funding all of her income.
+        Her portfolio simply recovers and keeps growing uninterrupted.
+        At age 70 her annuity begins paying $40,000 a year, guaranteed
+        for life regardless of what markets do.
       </p>
       <p>
-        When you begin taking income from your portfolio, the order of
-        returns matters far more than the average. A bad stretch of
-        market performance in the early years of retirement, while you
-        are making withdrawals, can do lasting damage that no
-        subsequent recovery can fully repair. This is called sequence
-        of returns risk, and it is one of the most consequential and
-        least discussed risks in retirement planning.
+        Both sisters take $1,000,000 in total income over 25 years.
+        Both experience the same market returns. The difference is how
+        those market returns affect their retirement accounts along
+        the way.
       </p>
-      <p>
-        The three scenarios below use actual S&amp;P 500 returns from
-        2000 through 2025, a period that included the Dot Com collapse,
-        the Great Financial Crisis, and Covid, to illustrate exactly how
-        this plays out.
-      </p>
-      <p>
-        Scenario 1 proves that without withdrawals, the order of
-        returns is completely irrelevant. The same returns in reverse
-        order produce the identical ending balance.
-      </p>
-      <p>
-        Scenario 2 shows what happens when a $1,000,000 portfolio
-        begins taking $40,000 in annual withdrawals starting in the
-        year 2000, right into one of the worst stretches in modern
-        market history.
-      </p>
-      <p>
-        Scenario 3 shows how splitting a $600,000 portfolio at age 60,
-        allocating a portion to a Guaranteed Lifetime Withdrawal
-        Benefit annuity and leaving the remainder completely untouched,
-        produces dramatically better outcomes while generating the same
-        $40,000 in annual income starting at age 70.
-      </p>
-      <p class="article-lead-in">The numbers tell the story. Use the tabs below to explore each scenario.</p>
+      <p class="article-lead-in">Use the tabs below to follow their stories.</p>
     </article>
 
     <section style="max-width:900px;margin:0 auto;padding:2rem 1.5rem;">
@@ -106,7 +99,6 @@
         .legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:#6B7280;margin-bottom:1.5rem;}
         .legend-item{display:flex;align-items:center;gap:5px;}
         .legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
-        .legend-dash{width:16px;height:3px;border-radius:0;flex-shrink:0;}
         .insight{background:#F2F5F8;border-left:3px solid #123B6D;border-radius:0 8px 8px 0;padding:0.85rem 1rem;font-size:14px;color:#1F2937;line-height:1.6;margin-bottom:0.75rem;}
         .scenario-note{font-size:11px;color:#9ca3af;margin-top:0.5rem;line-height:1.5;}
         .compare-bar{background:#F2F5F8;border-radius:8px;padding:1rem;margin-bottom:0.75rem;}
@@ -116,48 +108,43 @@
         .bar-meta{display:flex;justify-content:space-between;font-size:12px;color:#6B7280;}
       </style>
 
-      <div class="tabs"><button class="tab active" onclick="showPanel(0)">Scenario 1: No withdrawals</button><button class="tab" onclick="showPanel(1)">Scenario 2: 4% withdrawal</button><button class="tab" onclick="showPanel(2)">Scenario 3: GLWB strategy</button></div>
+      <div class="tabs"><button class="tab active" onclick="showPanel(0)">Hope: Full Market Strategy</button><button class="tab" onclick="showPanel(1)">Helen: Pension Strategy</button></div>
 
-      <div class="panel active" id="panel-0"><div class="kpi-row"><div class="kpi"><div class="kpi-label">Starting balance</div><div class="kpi-value">$1,000,000</div></div><div class="kpi"><div class="kpi-label">Actual sequence ending</div><div class="kpi-value green">$7,528,461</div></div><div class="kpi"><div class="kpi-label">Reversed sequence ending</div><div class="kpi-value green">$7,528,461</div></div><div class="kpi"><div class="kpi-label">Difference</div><div class="kpi-value">$0</div></div></div><div class="chart-wrap"><canvas id="chart0" role="img" aria-label="Actual and reversed S&P 500 returns converging to identical ending values with no withdrawals">Both sequences converge to identical ending values.</canvas></div><div class="legend"><span class="legend-item"><span class="legend-dot" style="background:#2a78d6"></span>Actual returns 2000 to 2025</span><span class="legend-item"><span class="legend-dot" style="background:#eda100"></span>Reversed returns</span></div><div class="insight"><strong>Key takeaway:</strong> Without withdrawals, the order of returns is completely irrelevant. Both sequences produce identical ending balances of $7,528,461 despite dramatically different year-by-year performance. During accumulation, average return is all that matters.</div><div class="scenario-note">Starting balance $1,000,000. Actual S&amp;P 500 annual returns 2000 to 2025. No withdrawals taken. Average annual return 9.69%. Illustrative purposes only. Past performance is not indicative of future results.</div></div>
+      <div class="panel active" id="panel-0">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-label">Total income taken</div><div class="kpi-value gold">$1,000,000</div></div><div class="kpi"><div class="kpi-label">Portfolio at age 95</div><div class="kpi-value green">$3,700,315</div></div><div class="kpi"><div class="kpi-label">Income ever at risk</div><div class="kpi-value red">Yes, every year</div></div>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-hope" role="img" aria-label="Hope portfolio balance from age 60 to 95 showing impact of market crashes and withdrawals">Hope's portfolio balance over 35 years with $40,000 annual withdrawals starting at age 70.</canvas></div>
+        <div class="insight"><strong>Hope's story:</strong> Hope's full market strategy works reasonably well because markets eventually recover. After withdrawing $1,000,000 over 25 years she still has $3,700,315 at age 95. But here is what the ending number does not show: every market downturn for 25 years was a direct threat to her income. In 2008 her portfolio dropped to $359,447 while she was still accumulating. In 2022 it dropped again while she was withdrawing. Hope got lucky. In a different sequence she could have run out of money. She never knew for certain which outcome she would get.</div>
+        <div class="scenario-note">Starting balance $500,000 at age 60. Fully invested in market. No withdrawals years 1 to 10. $40,000 annual withdrawal begins at age 70. Actual S&amp;P 500 returns 2000 to 2024 for years 1 to 25. Mirrored returns years 26 to 35. Illustrative purposes only. Past performance is not indicative of future results.</div>
+      </div>
 
-      <div class="panel" id="panel-1"><div class="kpi-row"><div class="kpi"><div class="kpi-label">Starting balance</div><div class="kpi-value">$1,000,000</div></div><div class="kpi"><div class="kpi-label">Annual withdrawal</div><div class="kpi-value gold">$40,000</div></div><div class="kpi"><div class="kpi-label">Total withdrawn 25 yrs</div><div class="kpi-value gold">$1,000,000</div></div><div class="kpi"><div class="kpi-label">Ending portfolio balance</div><div class="kpi-value red">$1,610,182</div></div></div><div class="chart-wrap"><canvas id="chart1" role="img" aria-label="Portfolio balance dropping sharply in early years due to withdrawals during negative market returns">Portfolio drops sharply when withdrawals coincide with early market losses.</canvas></div><div class="legend"><span class="legend-item"><span class="legend-dot" style="background:#2a78d6"></span>Portfolio with $40,000 per year withdrawal</span><span class="legend-item" style="align-items:center"><span class="legend-dash" style="background:#e34948"></span>&nbsp;No withdrawal baseline</span></div><div class="insight"><strong>Key takeaway:</strong> On the surface, ending with $1,610,182 after withdrawing $1,000,000 over 25 years looks like a success. You took out a million dollars and still have money left. Most people would consider that a win. But compare it to the same portfolio without withdrawals, which grew to $7,528,461 over the same period, and the picture changes completely. The $40,000 annual withdrawal combined with early market losses created a $5,918,279 gap. That is not a failure of the market. It is the cost of sequence of returns risk.</div><div class="scenario-note">Starting balance $1,000,000. Actual S&amp;P 500 annual returns 2000 to 2025. $40,000 annual withdrawal beginning year one. Total withdrawn $1,000,000 over 25 years. Illustrative purposes only. Past performance is not indicative of future results.</div></div>
-
-      <div class="panel" id="panel-2"><div class="kpi-row"><div class="kpi"><div class="kpi-label">Starting balance</div><div class="kpi-value">$600,000</div></div><div class="kpi"><div class="kpi-label">GLWB premium</div><div class="kpi-value navy">$284,380</div></div><div class="kpi"><div class="kpi-label">Remaining portfolio</div><div class="kpi-value navy">$315,620</div></div><div class="kpi"><div class="kpi-label">Annual guaranteed income</div><div class="kpi-value gold">$40,000</div></div><div class="kpi"><div class="kpi-label">Total income paid 25 yrs</div><div class="kpi-value gold">$1,000,000</div></div><div class="kpi"><div class="kpi-label">Portfolio at age 95</div><div class="kpi-value green">$8,114,546</div></div></div><div class="chart-wrap"><canvas id="chart2" role="img" aria-label="Investment portfolio growing uninterrupted for 35 years alongside GLWB benefit base during 10 year deferral">Investment portfolio grows uninterrupted for 35 years while GLWB funds all income.</canvas></div><div class="legend"><span class="legend-item"><span class="legend-dot" style="background:#1baf7a"></span>Investment portfolio no withdrawals 35 yr growth</span><span class="legend-item"><span class="legend-dot" style="background:#2a78d6"></span>GLWB benefit base 7% rollup 10 yr deferral</span></div><div class="compare-bar"><div class="compare-label">Scenario 2 ending balance after $1,000,000 income from $1,000,000 start</div><div class="bar-track"><div class="bar-fill" style="width:17%;background:#A32D2D"></div></div><div class="bar-meta"><span style="color:#A32D2D;font-weight:500">$1,610,182</span><span>$1,000,000 starting balance</span></div></div><div class="compare-bar"><div class="compare-label">Scenario 3 ending balance after $1,000,000 income from $600,000 start</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#27500A"></div></div><div class="bar-meta"><span style="color:#27500A;font-weight:500">$8,114,546</span><span>$600,000 starting balance</span></div></div><div class="insight"><strong>Key takeaway:</strong> Starting with $400,000 less and taking the same $40,000 annual income, the GLWB strategy produces a portfolio ending balance of $8,114,546 versus $1,610,182. The investment portfolio never funds income so it grows completely uninterrupted for 35 years. Sequence of returns risk is removed from the equation entirely.</div><div class="scenario-note">Starting balance $600,000 at age 60. $284,380 allocated to GLWB, $315,620 remains invested. GLWB benefit base grows at 7% annual rollup during 10 year deferral. Income of $40,000 annually begins at age 70 based on 7.15% single life payout rate. Investment portfolio grows at 9.69% average S&amp;P 500 return for 35 years with zero withdrawals. Illustrative purposes only. Not a contract or guarantee of benefits. Actual results will vary by carrier, product, and market conditions. Past performance is not indicative of future results.</div></div>
+      <div class="panel" id="panel-1">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-label">Helen's starting balance at 60</div><div class="kpi-value">$500,000</div></div><div class="kpi"><div class="kpi-label">Allocated to Pension Strategy</div><div class="kpi-value navy">$284,380</div></div><div class="kpi"><div class="kpi-label">Remaining portfolio at 60</div><div class="kpi-value navy">$215,620</div></div><div class="kpi"><div class="kpi-label">Guaranteed annual income at 70</div><div class="kpi-value gold">$40,000</div></div><div class="kpi"><div class="kpi-label">Total income received</div><div class="kpi-value gold">$1,000,000</div></div><div class="kpi"><div class="kpi-label">Portfolio at age 95</div><div class="kpi-value green">$4,295,056</div></div><div class="kpi"><div class="kpi-label">Income ever at risk</div><div class="kpi-value green">Never</div></div>
+        </div>
+        <div class="chart-wrap"><canvas id="chart-helen" role="img" aria-label="Helen portfolio balance and GLWB benefit base from age 60 to 95 growing uninterrupted">Helen's portfolio grows uninterrupted for 35 years while GLWB funds all income.</canvas></div>
+        <div class="insight"><strong>Helen's story:</strong> Helen's portfolio suffers the same market losses as Hope's in the early years, dropping to $195,919 at its lowest point. But Helen never needs to sell a single share. Her pension is paying her $40,000 a year starting at age 70, guaranteed, regardless of what markets do. Her portfolio simply weathers the storms and keeps growing uninterrupted for the full 35 years. At age 95 her portfolio has grown to $4,295,056, which is $594,741 more than Hope's. And unlike Hope, Helen never had a single sleepless night wondering if her income would show up that month.</div>
+        <div class="compare-bar"><div class="compare-label">Hope's ending portfolio at age 95</div><div class="bar-track"><div class="bar-fill" style="width:86%;background:#2a78d6"></div></div><div class="bar-meta"><span style="color:#2a78d6;font-weight:500">$3,700,315</span><span>Same income, same returns, same starting amount</span></div></div><div class="compare-bar"><div class="compare-label">Helen's ending portfolio at age 95</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#1baf7a"></div></div><div class="bar-meta"><span style="color:#1baf7a;font-weight:500">$4,295,056</span><span>Helen wins by $594,741</span></div></div>
+        <div class="insight"><strong>The bottom line:</strong> Same starting amount. Same market returns. Same total income taken. Helen ends up with $594,741 more at age 95 and never once worried whether her income would arrive that month. That is what a guaranteed income floor actually buys you. Not just income. Clarity and confidence.</div>
+        <div class="scenario-note">Starting balance $500,000 at age 60. $284,380 allocated to GLWB annuity at 7% annual rollup. Income of $40,000 annually begins at age 70 based on 7.15% single life payout rate at age 70. Remaining $215,620 invested in market for full 35 years with zero withdrawals. Actual S&amp;P 500 returns 2000 to 2024 for years 1 to 25. Mirrored returns years 26 to 35. Illustrative purposes only. Not a contract or guarantee of benefits. Actual results will vary by carrier, product, and market conditions. Past performance is not indicative of future results.</div>
+      </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <script>
-      const years0 = [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
-      const actual0 = [909000,800920,623917,802856,890207,933916,1081381,1140749,718672,908832,1045702,1067767,1238610,1639795,1864283,1890010,2116055,2577990,2465074,3241326,3837730,4939543,4044991,5108420,6386546,7528461];
-      const reverse0 = [1178800,1473736,1861181,1524121,1961696,2322648,3054050,2920283,3557781,3983291,4038261,4591098,6078155,7050660,7199429,8283663,10475520,6599578,6961894,8061178,8456981,9377101,12066454,9399767,8282135,7528461];
-      const portfolio1 = [869000,725676,525302,635958,665150,657809,721677,721297,414417,484072,516973,487881,525942,656295,706142,675887,716723,833184,756690,954972,1090687,1363823,1076834,1319934,1610182,1610182];
-
-      function buildGLWB() {
-        const premium = 284380, rollup = 0.07, sp = 0.0969;
-        let port = 315620, glwb = premium;
-        const portData = [], glwbData = [], labels = [];
-        for (let yr = 1; yr <= 35; yr++) {
-          port = port * (1 + sp);
-          if (yr <= 10) {
-            glwb = glwb * (1 + rollup);
-          }
-          portData.push(Math.round(port));
-          glwbData.push(Math.round(glwb));
-          labels.push('Yr ' + yr);
-        }
-        return { labels, portData, glwbData };
-      }
-      const g = buildGLWB();
+      const hopeData = [454500,400415,311923,401445,445203,467018,540807,570551,359447,454800,483471,453904,486529,604364,646962,616820,650839,752722,679602,854176,972544,1211163,951342,1161545,1411931,1742870,1386934,1744794,2026362,2624687,2469121,2967389,3283476,3289485,3700315];
+      const helenData = [195919,172594,134391,172921,191769,201165,232949,245761,154830,195860,225435,230169,266996,353482,401929,407556,456463,555772,531318,698683,827240,1064648,871867,1101068,1376335,1738411,1423869,1832918,2172175,2856410,2731328,3326757,3725968,3778132,4295056];
+      const ageLabels = ['60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94'];
       const gridColor = 'rgba(180,180,180,0.2)';
       const fmt = v => '$' + Math.round(v).toLocaleString();
 
-      new Chart(document.getElementById('chart0'), {
+      new Chart(document.getElementById('chart-hope'), {
         type: 'line',
         data: {
-          labels: years0,
+          labels: ageLabels,
           datasets: [
-            { label: 'Actual', data: actual0, borderColor: '#2a78d6', borderWidth: 2, pointRadius: 0, tension: 0.3, fill: false },
-            { label: 'Reversed', data: reverse0, borderColor: '#eda100', borderWidth: 2, pointRadius: 0, tension: 0.3, borderDash: [5, 4], fill: false }
+            { label: 'Hope portfolio', data: hopeData, borderColor: '#2a78d6', backgroundColor: 'rgba(42,120,214,0.08)', borderWidth: 2, pointRadius: 0, tension: 0.3, fill: true }
           ]
         },
         options: {
@@ -168,19 +155,18 @@
             tooltip: { callbacks: { label: ctx => fmt(ctx.parsed.y) } }
           },
           scales: {
-            x: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, maxTicksLimit: 8 } },
+            x: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, maxTicksLimit: 12 } },
             y: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, callback: v => '$' + (v / 1000000).toFixed(1) + 'M' } }
           }
         }
       });
 
-      new Chart(document.getElementById('chart1'), {
+      new Chart(document.getElementById('chart-helen'), {
         type: 'line',
         data: {
-          labels: years0,
+          labels: ageLabels,
           datasets: [
-            { label: 'With withdrawals', data: portfolio1, borderColor: '#2a78d6', backgroundColor: 'rgba(42,120,214,0.08)', borderWidth: 2, pointRadius: 0, tension: 0.3, fill: true },
-            { label: 'No withdrawal', data: actual0, borderColor: '#e34948', borderWidth: 1.5, pointRadius: 0, tension: 0.3, borderDash: [4, 3], fill: false }
+            { label: 'Helen portfolio', data: helenData, borderColor: '#1baf7a', backgroundColor: 'rgba(27,175,122,0.08)', borderWidth: 2, pointRadius: 0, tension: 0.3, fill: true }
           ]
         },
         options: {
@@ -191,30 +177,7 @@
             tooltip: { callbacks: { label: ctx => fmt(ctx.parsed.y) } }
           },
           scales: {
-            x: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, maxTicksLimit: 8 } },
-            y: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, callback: v => '$' + (v / 1000000).toFixed(1) + 'M' } }
-          }
-        }
-      });
-
-      new Chart(document.getElementById('chart2'), {
-        type: 'line',
-        data: {
-          labels: g.labels,
-          datasets: [
-            { label: 'Investment portfolio', data: g.portData, borderColor: '#1baf7a', backgroundColor: 'rgba(27,175,122,0.08)', borderWidth: 2, pointRadius: 0, tension: 0.3, fill: true },
-            { label: 'GLWB benefit base', data: g.glwbData, borderColor: '#2a78d6', backgroundColor: 'rgba(42,120,214,0.06)', borderWidth: 2, pointRadius: 0, tension: 0.3, borderDash: [5, 4], fill: false }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            tooltip: { callbacks: { label: ctx => fmt(ctx.parsed.y) } }
-          },
-          scales: {
-            x: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, maxTicksLimit: 10 } },
+            x: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, maxTicksLimit: 12 } },
             y: { grid: { color: gridColor }, ticks: { color: '#888', font: { size: 11 }, callback: v => '$' + (v / 1000000).toFixed(1) + 'M' } }
           }
         }
@@ -226,23 +189,24 @@
       }
     </script>
 
-    <section class="section section--gray-blue">
+    <section class="section section--navy">
       <div class="narrow-cta">
-        <h2>Ready to Remove Sequence Risk From Your Retirement Plan?</h2>
+        <h2>Which Sister Are You?</h2>
         <p>
-          The math is clear. A guaranteed income floor does not just
-          provide income. It protects your investment portfolio from
-          the single greatest threat to retirement savings. Schedule a
-          complimentary call and we will walk through what this
-          strategy could look like for your specific situation.
+          Hope's strategy worked out. But it required 25 years of
+          uncertainty and a lot of luck with market timing. Helen's
+          pension strategy worked better and she never had a sleepless
+          night
+          about her income. The good news is you do not have to choose
+          between growth and security. You can have both.
         </p>
 
         <div class="section-cta">
           <div class="cta-row">
-            <a href="schedule.html" class="btn btn-primary">Schedule Your Complimentary Call</a>
-            <a href="calculator.html" class="btn btn-secondary">Calculate Your Income Gap First</a>
+            <a href="calculator.html" class="btn btn-primary">Calculate Your Income Gap</a>
+            <a href="schedule.html" class="btn btn-secondary-inverse">Schedule Your Complimentary Call</a>
           </div>
-          <p class="cta-support">Licensed Texas Life and Health Insurance Professional | TDI License #2266812 | Independent, I Work For You</p>
+          <p style="font-size:0.85rem;color:#b8c8db;">Licensed Texas Life and Health Insurance Professional | TDI License #2266812 | Independent, I Work For You</p>
         </div>
       </div>
     </section>
