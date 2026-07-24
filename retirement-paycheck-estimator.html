@@ -47,7 +47,8 @@
       <div style="max-width: 640px; margin: 0 auto; text-align: center;">
         <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: clamp(20px, 3vw, 28px);">Access the Tool</h2>
         <p style="color: var(--slate); font-size: 16px; line-height: 1.7; margin-top: 1rem; margin-bottom: 2rem;">Enter your information below for free access to the Pension Income Projection Calculator. No obligation. We may follow up to see if you have any questions.</p>
-        <iframe id="gateFormFrame" src="https://docs.google.com/forms/d/e/1FAIpQLSdE-1BrIUwN2nw_zocL58haiXUwgwxRw9je-6d9UqIuyROIGQ/viewform?embedded=true&usp=pp_url&entry.1550005308=Paycheck+Estimator" width="100%" height="870" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        <p style="color: var(--slate); font-size: 13px; margin-bottom: 1rem;">Submitting this form links it to the details you entered on the Income Gap Calculator, so we can speak directly to your numbers on your call.</p>
+        <iframe id="gateFormFrame" width="100%" height="870" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
         <p style="margin-top: 1rem;"><a href="#" id="gateManualUnlock" style="color: var(--gold); font-weight: 600;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>I already submitted the form</a></p>
       </div>
     </section>
@@ -57,7 +58,7 @@
       <section style="background: var(--soft-gray); padding: 2rem 1.5rem;">
         <div style="max-width: 640px; margin: 0 auto; text-align: center;">
           <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: 22px;">What Is Your Monthly Income Gap?</h2>
-          <p style="color: var(--slate); font-size: 15px; margin-bottom: 1rem;">Enter the income gap you calculated using the free Income Gap Calculator. If you have not yet calculated your gap, visit the Income Gap Calculator first. <a href="calculator.html" style="color: var(--gold); font-weight: 600;">Calculate Your Income Gap here</a></p>
+          <p style="color: var(--slate); font-size: 15px; margin-bottom: 1rem;">Already calculated your income gap? It's filled in for you below. If not, enter it manually, or <a href="calculator.html" style="color: var(--gold); font-weight: 600;">calculate your income gap here</a> first.</p>
           <label for="manualGap">My Monthly Income Gap ($)</label>
           <input type="number" id="manualGap" placeholder="e.g. 2500" oninput="updateManualGap()" style="width: 100%; max-width: 300px; margin-top: 1rem; border: 0.5px solid #d1d5db; border-radius: 8px; padding: 0 10px; height: 36px; font-size: 14px;">
         </div>
@@ -129,7 +130,7 @@
           </div>
 
           <a class="cta-btn" href="schedule.html">Schedule Your Complimentary Call</a>
-          <a class="cta-btn-secondary" href="mailto:john@createyourownpension.org">I Have Questions About My Results</a>
+          <a class="cta-btn-secondary" href="mailto:admin@createyourownpension.org">I Have Questions About My Results</a>
           <div class="disclosure">
             Calculator results are illustrative only and will vary based on user inputs, product selection, carrier, and market timing. Payout rates used in calculations are illustrative general rates and do not represent any specific carrier or product. Not a contract or guarantee of benefits. For informational purposes only. Products and availability vary by state. Licensed in Texas. TDI License #2266812.
           </div>
@@ -171,6 +172,12 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const gapParam = urlParams.get('gap');
+    const sidParam = urlParams.get('sid');
+    var gateBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdE-1BrIUwN2nw_zocL58haiXUwgwxRw9je-6d9UqIuyROIGQ/viewform?embedded=true&usp=pp_url&entry.1550005308=Paycheck+Estimator";
+    if (sidParam) {
+      gateBaseUrl += "&entry.363577213=" + encodeURIComponent(sidParam);
+    }
+    document.getElementById('gateFormFrame').src = gateBaseUrl;
     if(gapParam && document.getElementById('manualGap')){
       document.getElementById('manualGap').value = gapParam;
       const event = new Event('input');

@@ -1612,6 +1612,22 @@ footer h3 {
   color: #b8c8db;
 }
 
+.calc-disclosure-note {
+  font-size: 12px;
+  color: #b8c8db;
+  margin-top: 6px;
+}
+
+.gate-disclosure-note {
+  font-size: 13px;
+  color: var(--slate);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.legal-section h3 { font-size: 16px; }
+.legal-section p { font-size: 13px; color: var(--slate); }
+
 .section-label {
   font-size: 12px;
   font-weight: 500;

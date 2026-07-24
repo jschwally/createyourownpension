@@ -103,6 +103,66 @@ var getVal = function (id) { return parseFloat(document.getElementById(id).value
 
 var monthlyGap = 0;
 
+function cyopGetSessionId() {
+  var sid = localStorage.getItem('cyop_session_id');
+  if (!sid) {
+    sid = 'sid_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('cyop_session_id', sid);
+  }
+  return sid;
+}
+
+function submitCalcData() {
+  var form = document.getElementById('cyop-calc-data-form');
+  if (!form) return;
+  var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint");
+  var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint");
+  var health = getVal("healthins") + getVal("medical") + getVal("dental") + getVal("vision");
+  var food = getVal("food");
+  var otherExp = getVal("taxes") + getVal("otherdebt") + getVal("other");
+  var expenses = housing + transport + health + food + otherExp;
+  var income = getVal("ss1") + getVal("ss2") + getVal("pen1") + getVal("pen2") + getVal("otherinc");
+  var gap = income - expenses;
+  document.getElementById('cyop-f-mortgage').value = getVal("mortgage");
+  document.getElementById('cyop-f-proptax').value = getVal("proptax");
+  document.getElementById('cyop-f-homeins').value = getVal("homeins");
+  document.getElementById('cyop-f-utilities').value = getVal("utilities");
+  document.getElementById('cyop-f-homemaint').value = getVal("homemaint");
+  document.getElementById('cyop-f-autoloan').value = getVal("autoloan");
+  document.getElementById('cyop-f-autoins').value = getVal("autoins");
+  document.getElementById('cyop-f-gasmaint').value = getVal("gasmaint");
+  document.getElementById('cyop-f-healthins').value = getVal("healthins");
+  document.getElementById('cyop-f-medical').value = getVal("medical");
+  document.getElementById('cyop-f-dental').value = getVal("dental");
+  document.getElementById('cyop-f-vision').value = getVal("vision");
+  document.getElementById('cyop-f-food').value = getVal("food");
+  document.getElementById('cyop-f-taxes').value = getVal("taxes");
+  document.getElementById('cyop-f-otherdebt').value = getVal("otherdebt");
+  document.getElementById('cyop-f-other').value = getVal("other");
+  document.getElementById('cyop-f-ss1').value = getVal("ss1");
+  document.getElementById('cyop-f-ss2').value = getVal("ss2");
+  document.getElementById('cyop-f-pen1').value = getVal("pen1");
+  document.getElementById('cyop-f-pen2').value = getVal("pen2");
+  document.getElementById('cyop-f-otherinc').value = getVal("otherinc");
+  document.getElementById('cyop-f-sessionid').value = cyopGetSessionId();
+  document.getElementById('cyop-f-gap').value = Math.round(gap);
+  document.getElementById('cyop-f-totalexpenses').value = Math.round(expenses);
+  document.getElementById('cyop-f-totalincome').value = Math.round(income);
+  form.submit();
+}
+
+document.addEventListener('click', function (e) {
+  var link = e.target.closest ? e.target.closest('.cyop-estimator-link') : null;
+  if (link) {
+    e.preventDefault();
+    var destination = link.getAttribute('href');
+    submitCalcData();
+    setTimeout(function () {
+      window.location.href = destination;
+    }, 250);
+  }
+});
+
 function calcGap() {
   var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint");
   var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint");
@@ -144,7 +204,7 @@ function calcGap() {
     gapCard.className = "result-card red-fill";
     gapLabel.textContent = "Monthly Income Gap";
     gapEl.textContent = fmt(gap);
-    statusEl.innerHTML = '<div class="status-msg gap-msg">You have a monthly income gap of <span id=\'gap-amount\'>' + fmt(gap) + "</span>. That is what we are solving for. <a href='retirement-paycheck-estimator.html?gap=" + Math.round(Math.abs(gap)) + "' style='color:#C9A227;font-weight:600;text-decoration:underline;'>Use the free Retirement Paycheck Estimator</a> to explore how a Pension Strategy could close it.</div>";
+    statusEl.innerHTML = '<div class="status-msg gap-msg">You have a monthly income gap of <span id=\'gap-amount\'>' + fmt(gap) + "</span>. That is what we are solving for. <a href='retirement-paycheck-estimator.html?gap=" + Math.round(Math.abs(gap)) + "&sid=" + cyopGetSessionId() + "' class='cyop-estimator-link' style='color:#C9A227;font-weight:600;text-decoration:underline;'>Use the free Retirement Paycheck Estimator</a> to explore how a Pension Strategy could close it.</div>";
     statusEl.style.display = "block";
     annualLine.textContent = "Annual income gap: " + fmt(gap * 12);
   } else {
