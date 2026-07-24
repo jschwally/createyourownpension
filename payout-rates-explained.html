@@ -65,54 +65,55 @@
         <p style="margin-bottom: 1rem;">Here's a simplified example. The dollar figures below come from real current rate tables for three different carriers, with the carrier names removed so the pattern is the point rather than any single company's numbers. Notice how the highest payer changes as the age changes, rather than one company staying on top the whole way through.</p>
 
         <div style="overflow-x:auto; margin: 1.5rem 0;">
-          <div style="display:grid; grid-template-columns:90px repeat(10,minmax(64px,1fr)); gap:3px; min-width:640px; font-size:13px;">
-            <div></div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">67<br><span style="font-size:11px;">now</span></div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">68</div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">69</div>
-            <div style="text-align:center;color:var(--gold-dark);font-weight:600;padding:4px 2px;border-radius:4px;">70<br><span style="font-size:11px;">selected</span></div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">71</div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">72</div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">73</div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">74</div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">75</div>
-            <div style="text-align:center;color:var(--slate);padding:4px 2px;">76</div>
+          <div style="display:grid; grid-template-columns:90px repeat(10,minmax(64px,1fr)); grid-template-rows:repeat(4, auto); gap:3px; min-width:640px; font-size:13px;">
+            <div style="grid-column:1;grid-row:1;"></div>
+            <div style="grid-column:2;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">67<br><span style="font-size:11px;">now</span></div>
+            <div style="grid-column:3;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">68</div>
+            <div style="grid-column:4;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">69</div>
+            <div style="grid-column:5;grid-row:1;text-align:center;color:var(--gold-dark);font-weight:600;padding:4px 2px;">70<br><span style="font-size:11px;">selected</span></div>
+            <div style="grid-column:6;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">71</div>
+            <div style="grid-column:7;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">72</div>
+            <div style="grid-column:8;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">73</div>
+            <div style="grid-column:9;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">74</div>
+            <div style="grid-column:10;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">75</div>
+            <div style="grid-column:11;grid-row:1;text-align:center;color:var(--slate);padding:4px 2px;">76</div>
 
-            <div style="display:flex;align-items:center;padding:6px 4px;color:var(--charcoal);font-weight:600;">Carrier A</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$6,642</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$7,432</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$8,315</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$9,479</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$10,398</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$11,400</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$12,510</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$13,447</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$14,435</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$15,495</div>
+            <div style="grid-column:1;grid-row:2;display:flex;align-items:center;padding:6px 4px;color:var(--charcoal);font-weight:600;">Carrier A</div>
+            <div style="grid-column:2;grid-row:2;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$6,642</div>
+            <div style="grid-column:3;grid-row:2;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$7,432</div>
+            <div style="grid-column:4;grid-row:2;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$8,315</div>
+            <div style="grid-column:5;grid-row:2;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$9,479</div>
+            <div style="grid-column:6;grid-row:2;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$10,398</div>
+            <div style="grid-column:7;grid-row:2;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$11,400</div>
+            <div style="grid-column:8;grid-row:2;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$12,510</div>
+            <div style="grid-column:9;grid-row:2;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$13,447</div>
+            <div style="grid-column:10;grid-row:2;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$14,435</div>
+            <div style="grid-column:11;grid-row:2;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$15,495</div>
 
-            <div style="display:flex;align-items:center;padding:6px 4px;color:var(--charcoal);font-weight:600;">Carrier B</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$7,076</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$7,773</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$8,536</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$9,371</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$10,285</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$11,286</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$12,381</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$13,578</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$14,889</div>
-            <div style="background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$16,321</div>
+            <div style="grid-column:1;grid-row:3;display:flex;align-items:center;padding:6px 4px;color:var(--charcoal);font-weight:600;">Carrier B</div>
+            <div style="grid-column:2;grid-row:3;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$7,076</div>
+            <div style="grid-column:3;grid-row:3;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$7,773</div>
+            <div style="grid-column:4;grid-row:3;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$8,536</div>
+            <div style="grid-column:5;grid-row:3;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$9,371</div>
+            <div style="grid-column:6;grid-row:3;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$10,285</div>
+            <div style="grid-column:7;grid-row:3;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$11,286</div>
+            <div style="grid-column:8;grid-row:3;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$12,381</div>
+            <div style="grid-column:9;grid-row:3;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$13,578</div>
+            <div style="grid-column:10;grid-row:3;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$14,889</div>
+            <div style="grid-column:11;grid-row:3;background:var(--midnight);color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$16,321</div>
 
-            <div style="display:flex;align-items:center;padding:6px 4px;color:var(--charcoal);font-weight:600;">Carrier C</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$6,440</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$7,392</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$8,467</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$9,333</div>
-            <div style="background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$10,349</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$11,273</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$12,221</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$13,195</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$14,193</div>
-            <div style="background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$15,215</div>
+            <div style="grid-column:1;grid-row:4;display:flex;align-items:center;padding:6px 4px;color:var(--charcoal);font-weight:600;">Carrier C</div>
+            <div style="grid-column:2;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$6,440</div>
+            <div style="grid-column:3;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$7,392</div>
+            <div style="grid-column:4;grid-row:4;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$8,467</div>
+            <div style="grid-column:5;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$9,333</div>
+            <div style="grid-column:6;grid-row:4;background:#4A73A0;color:var(--white);text-align:center;padding:8px 1px;border-radius:4px;">$10,349</div>
+            <div style="grid-column:7;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$11,273</div>
+            <div style="grid-column:8;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$12,221</div>
+            <div style="grid-column:9;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$13,195</div>
+            <div style="grid-column:10;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$14,193</div>
+            <div style="grid-column:11;grid-row:4;background:#C9D6E8;color:var(--charcoal);text-align:center;padding:8px 1px;border-radius:4px;">$15,215</div>
+
             <div style="grid-column:5;grid-row:1/5;border:2px solid var(--gold);border-radius:4px;pointer-events:none;"></div>
           </div>
         </div>
