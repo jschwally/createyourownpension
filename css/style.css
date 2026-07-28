@@ -1578,6 +1578,53 @@ footer h3 {
   line-height: 1.65;
 }
 
+.contact-fallback {
+  background: var(--soft-gray);
+  padding: 2rem;
+  border-radius: var(--radius-btn);
+  margin-top: 2rem;
+}
+
+.contact-fallback h3 {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.contact-fallback p {
+  font-family: var(--font-body);
+  color: var(--slate);
+  margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--slate);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.form-success {
+  font-family: var(--font-body);
+  color: var(--navy);
+  font-weight: 500;
+}
+
 .calc-wrapper {
   max-width: 860px;
   margin: 0 auto;
