@@ -981,32 +981,40 @@ main {
 }
 
 .steps-card {
-  position: relative;
   background: var(--warm-white);
   border-radius: 12px;
   padding: 2rem;
   border-top: 4px solid var(--gold);
+  text-align: center;
+}
+
+.steps-card-icon-wrap {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .steps-card-icon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 90px;
-  height: 90px;
+  display: block;
+  width: 130px;
+  height: 130px;
   object-fit: contain;
 }
 
 .steps-card-icon--large {
-  width: 120px;
-  height: 120px;
+  width: 176px;
+  height: 176px;
+}
+
+.steps-card-icon--small {
+  width: 117px;
+  height: 117px;
 }
 
 .steps-card-number {
-  display: block;
-  font-family: var(--font-heading);
   color: var(--gold);
-  font-size: 48px;
   font-weight: 700;
 }
 
@@ -1079,6 +1087,36 @@ main {
 .calc-cta-note {
   color: #b8c8db;
   margin-top: 1rem;
+}
+
+.calc-cta-reasons {
+  list-style: none;
+  margin: 1.5rem auto 0;
+  padding: 0;
+  max-width: 480px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.calc-cta-reasons li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: #b8c8db;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.calc-cta-reasons li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--gold);
 }
 
 .calc-cta-btn {
