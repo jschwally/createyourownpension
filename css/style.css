@@ -836,6 +836,12 @@ main {
   margin-top: 2rem;
 }
 
+.hero-microcopy {
+  color: #b8c8db;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
 .hero-media img {
   max-width: 100%;
   border-radius: 12px;
