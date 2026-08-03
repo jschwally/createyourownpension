@@ -859,6 +859,75 @@ main {
   }
 }
 
+/* Essentials section (index.html) — between hero and question-section */
+.essentials-section {
+  background: var(--soft-gray);
+  padding: 5rem 1.5rem;
+}
+
+.essentials-section h2 {
+  font-size: clamp(26px, 3.5vw, 40px);
+}
+
+.essentials-subheadline {
+  color: var(--slate);
+  font-size: 18px;
+  line-height: 1.65;
+  margin-top: 1rem;
+}
+
+.essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.essential-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.essential-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.essential-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.essential-label {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.essentials-closing {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 860px) {
+  .essentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .essentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Section 2 (index.html) */
 .question-section {
   background: var(--warm-white);
