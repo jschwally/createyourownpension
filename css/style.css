@@ -938,6 +938,14 @@ main {
   font-size: clamp(26px, 3.5vw, 40px);
 }
 
+.question-kicker {
+  font-family: var(--font-body);
+  color: var(--slate);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
 .question-subheadline {
   color: var(--slate);
   font-size: 18px;
