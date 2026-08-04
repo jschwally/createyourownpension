@@ -1409,35 +1409,6 @@ main {
   font-weight: 500;
 }
 
-/* Section 9 (index.html) */
-.credentials-section {
-  background: var(--midnight);
-  padding: 3rem 1.5rem;
-}
-
-.credentials-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.credentials-trust-line {
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.credentials-disclosure {
-  color: #6B7280;
-  font-size: 12px;
-  line-height: 1.6;
-  margin-top: 1rem;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Footer */
 footer {
   background: var(--white);
