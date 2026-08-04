@@ -2209,7 +2209,7 @@ footer h3 {
   margin-bottom: 1rem;
 }
 
-.closing-disclosure {
+.closing-cta .closing-disclosure {
   font-size: 11px;
   color: var(--slate);
   line-height: 1.6;
