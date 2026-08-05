@@ -58,229 +58,132 @@
       </div>
     </section>
 
-    <!-- CARD GRID SECTION -->
+    <!-- RESOURCE COLUMNS SECTION -->
     <style>
-      .resource-card-grid {
+      .resource-columns {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
+        gap: 2.5rem;
       }
-      .resource-card {
-        background: var(--white);
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        border-top: 4px solid var(--navy);
+      .resource-cat-heading {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-heading);
+        color: var(--navy);
+        font-size: 19px;
+        font-weight: 600;
+      }
+      .resource-cat-heading .cat-icon {
+        flex-shrink: 0;
+        color: var(--navy);
+      }
+      .cat-underline {
+        width: 32px;
+        height: 2px;
+        background: #C9A227;
+        margin: 0.6rem 0 1.25rem;
+      }
+      .resource-link-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .resource-link-list a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 0.5rem 0.75rem;
+        margin-left: -0.75rem;
+        color: var(--navy);
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+      .resource-link-list a:hover {
+        color: #A8841F;
+        border-left-color: #C9A227;
+      }
+      .resource-link-list .lock-icon {
+        color: #4B5563;
+        flex-shrink: 0;
       }
       @media (max-width: 860px) {
-        .resource-card-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 560px) {
-        .resource-card-grid {
+        .resource-columns {
           grid-template-columns: 1fr;
         }
       }
     </style>
     <section style="background: var(--warm-white); padding: 5rem 1.5rem;">
       <div style="max-width: 1200px; margin: 0 auto;">
-        <div class="resource-card-grid">
-          <div style="grid-column: 1 / -1; margin-top: 0;">
-            <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: 24px; font-weight: 600; margin-bottom: 0.75rem;">Retirement Planning Basics</h2>
-            <div style="width: 60px; height: 3px; background: var(--gold);"></div>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Finding Your Estimated Social Security Benefit</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Find your projected monthly benefit in about ten minutes.</p>
-            <a href="social-security-estimate.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">The History of Annuities</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">From Roman times to modern retirement planning, annuities have always been about the same idea: reliable income.</p>
-            <a href="history-of-annuities.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">A Simple Explanation of Annuity Types</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">A plain-language map of MYGA, FA, FIA, VA, and RILA annuities.</p>
-            <a href="types-of-annuities.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">What Is Sequence of Returns Risk?</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Why the timing of market returns matters more than long-term averages.</p>
-            <a href="sequence-of-returns-risk.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Required Minimum Distributions and Your Pension Strategy</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">How RMDs work, what triggers a penalty, and how to plan around them.</p>
-            <a href="understanding-rmds.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">What Happens to Your Annuity When You Pass Away</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Understand your death benefit before it becomes a surprise for your family.</p>
-            <a href="db-and-beneficiaries.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Medicare, IRMAA, and Your Pension Strategy</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">How the IRMAA cliff works, and how predictable income helps you avoid it.</p>
-            <a href="medicare-irmaa.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">How Annuity Income Is Actually Taxed</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">How qualified and non-qualified annuities are taxed differently.</p>
-            <a href="annuity-taxation.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Why Don't More Financial Advisors Use Annuities?</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">The real, structural reasons annuities rarely come up in advisory practices.</p>
-            <a href="why-advisors-dont-use-annuities.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">The Truth About Why Annuities Have a Bad Reputation</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Where annuity skepticism actually comes from, and whether it holds up.</p>
-            <a href="truth-about-annuities-reputation.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
+        <div class="resource-columns">
+
+          <div class="resource-category">
+            <h2 class="resource-cat-heading">
+              <svg class="cat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path><path d="M3 6l0 13"></path><path d="M12 6l0 13"></path><path d="M21 6l0 13"></path></svg>
+              Retirement Planning Basics
+            </h2>
+            <div class="cat-underline"></div>
+            <ul class="resource-link-list">
+              <li><a href="social-security-estimate.html">Finding Your Estimated Social Security Benefit</a></li>
+              <li><a href="types-of-annuities.html">A Simple Explanation of Annuity Types</a></li>
+              <li><a href="sequence-of-returns-risk.html">What Is Sequence of Returns Risk?</a></li>
+              <li><a href="understanding-rmds.html">Required Minimum Distributions and Your Pension Strategy</a></li>
+              <li><a href="db-and-beneficiaries.html">What Happens to Your Annuity When You Pass Away</a></li>
+              <li><a href="medicare-irmaa.html">Medicare, IRMAA, and Your Pension Strategy</a></li>
+              <li><a href="annuity-taxation.html">How Annuity Income Is Actually Taxed</a></li>
+              <li><a href="why-advisors-dont-use-annuities.html">Why Don't More Financial Advisors Use Annuities?</a></li>
+              <li><a href="truth-about-annuities-reputation.html">The Truth About Why Annuities Have a Bad Reputation</a></li>
+            </ul>
           </div>
 
-          <div style="grid-column: 1 / -1; margin-top: 3rem;">
-            <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: 24px; font-weight: 600; margin-bottom: 0.75rem;">Pension Strategy Mechanics</h2>
-            <div style="width: 60px; height: 3px; background: var(--gold);"></div>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">What Is a Fixed Indexed Annuity?</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">How an FIA credits interest and turns into guaranteed income.</p>
-            <a href="fia-explained.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Annuitizing vs. an Income Rider: Why They're Not the Same</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Two ways to get guaranteed income, with very different trade-offs.</p>
-            <a href="annuitize-vs-rider.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">How an Income Rider Actually Works, Start to Finish</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">A full walkthrough of the income rider lifecycle, from electing it at purchase to what your beneficiary receives.</p>
-            <a href="how-income-riders-work.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">How Interest Is Credited: Caps, Spreads, and Participation Rates</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">How caps, spreads, and participation rates decide your credited interest.</p>
-            <a href="crediting-strategies.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Accumulation Value vs. Benefit Base: Why Your Annuity Has Two Different Numbers</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Two numbers on your statement. Only one of them is real cash.</p>
-            <a href="accumulation-value-vs-benefit-base.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Understanding Payout Rates: The Number That Actually Determines Your Income</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">The number that actually determines your guaranteed income.</p>
-            <a href="payout-rates-explained.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">What Are Surrender Charges, and Why Do They Exist?</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">What surrender charges are, why they exist, and how to avoid them.</p>
-            <a href="surrender-charges-explained.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--navy); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Article</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Your Money Is Not Locked Up: How Free Withdrawals Actually Work</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">What a free withdrawal provision actually covers, and where its limits are.</p>
-            <a href="free-withdrawals-explained.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
+          <div class="resource-category">
+            <h2 class="resource-cat-heading">
+              <svg class="cat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path></svg>
+              Pension Strategy Mechanics
+            </h2>
+            <div class="cat-underline"></div>
+            <ul class="resource-link-list">
+              <li><a href="fia-explained.html">What Is a Fixed Indexed Annuity?</a></li>
+              <li><a href="annuitize-vs-rider.html">Annuitizing vs. an Income Rider: Why They're Not the Same</a></li>
+              <li><a href="how-income-riders-work.html">How an Income Rider Actually Works, Start to Finish</a></li>
+              <li><a href="crediting-strategies.html">How Interest Is Credited: Caps, Spreads, and Participation Rates</a></li>
+              <li><a href="accumulation-value-vs-benefit-base.html">Accumulation Value vs. Benefit Base: Why Your Annuity Has Two Different Numbers</a></li>
+              <li><a href="payout-rates-explained.html">Understanding Payout Rates: The Number That Actually Determines Your Income</a></li>
+              <li><a href="surrender-charges-explained.html">What Are Surrender Charges, and Why Do They Exist?</a></li>
+              <li><a href="free-withdrawals-explained.html">Your Money Is Not Locked Up: How Free Withdrawals Actually Work</a></li>
+            </ul>
           </div>
 
-          <div style="grid-column: 1 / -1; margin-top: 3rem;">
-            <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: 24px; font-weight: 600; margin-bottom: 0.75rem;">Illustrations</h2>
-            <div style="width: 60px; height: 3px; background: var(--gold);"></div>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--midnight); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Illustration</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Hope and Helen: Same Income, Very Different Retirements</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Same $40,000 income, 25 years, same market. See why their outcomes differ.</p>
-            <a href="sequence-of-returns-illustration.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">View Illustration</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--midnight); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Illustration</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">The Uneven Math of Losses and Gains</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Losses and gains aren't symmetric. See exactly how much harder recovery gets as the drawdown deepens.</p>
-            <a href="recovery-illustration.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">View Illustration</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--midnight); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Illustration</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">When $273,000 Equals $1 Million</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">A side-by-side look at how a Pension Strategy deposit can match the income of a portfolio nearly four times its size.</p>
-            <a href="pension-vs-portfolio-illustration.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">View Illustration</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--midnight); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Illustration</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Risk vs. Growth</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">See where common retirement savings vehicles fall on the risk and growth spectrum.</p>
-            <a href="risk-vs-growth.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">View Illustration</a>
+          <div class="resource-category">
+            <h2 class="resource-cat-heading">
+              <svg class="cat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v7a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path><path d="M9 8m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v11a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path><path d="M15 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v15a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"></path><path d="M4 20l14 0"></path></svg>
+              Illustrations
+            </h2>
+            <div class="cat-underline"></div>
+            <ul class="resource-link-list">
+              <li><a href="risk-vs-growth.html">Risk vs. Growth</a></li>
+              <li><a href="recovery-illustration.html">The Uneven Math of Losses and Gains</a></li>
+              <li><a href="sequence-of-returns-illustration.html">Hope and Helen: Same Income, Very Different Retirements</a></li>
+              <li><a href="pension-vs-portfolio-illustration.html">When $273,000 Equals $1 Million</a></li>
+            </ul>
           </div>
 
-          <div style="grid-column: 1 / -1; margin-top: 3rem;">
-            <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: 24px; font-weight: 600; margin-bottom: 0.75rem;">Tools &amp; Downloads</h2>
-            <div style="width: 60px; height: 3px; background: var(--gold);"></div>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--gold); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Interactive Tool</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">What If You Retired Into the Worst 3 Years the Market Has Had?</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Run your own numbers against real S&amp;P 500 returns since the 2000 downturn.</p>
-            <p style="color: var(--slate); font-size: 0.75rem; margin-top: 1rem; margin-bottom: 0.25rem;">Free — Email Required</p>
-            <a href="sor-tool.html" style="display: block; font-weight: 600; color: var(--gold);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Access the Tool</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--gold); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Interactive Tool</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Retirement Paycheck Estimator</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Project your guaranteed monthly income from a portion of your savings.</p>
-            <p style="color: var(--slate); font-size: 0.75rem; margin-top: 1rem; margin-bottom: 0.25rem;">Free — Email Required</p>
-            <a href="retirement-paycheck-estimator.html" style="display: block; font-weight: 600; color: var(--gold);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Access the Tool</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--gold); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Technical Briefing</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">Fixed Indexed Annuities and the Pension Strategy</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Institutional FIA research from T. Rowe Price, BlackRock, and AllianceBernstein.</p>
-            <p style="color: var(--slate); font-size: 0.75rem; margin-top: 1rem; margin-bottom: 0.25rem;">Free — Email Required</p>
-            <a href="fia-technical-briefing.html" style="display: block; font-weight: 600; color: var(--gold);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Access the Briefing</a>
+          <div class="resource-category">
+            <h2 class="resource-cat-heading">
+              <svg class="cat-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path><path d="M7 11l5 5l5 -5"></path><path d="M12 4l0 12"></path></svg>
+              Tools &amp; Downloads
+            </h2>
+            <div class="cat-underline"></div>
+            <ul class="resource-link-list">
+              <li><a href="sor-tool.html" title="Free, contact info required">What If You Retired Into the Worst 3 Years the Market Has Had?<svg class="lock-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"></path><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path><path d="M8 11v-4a4 4 0 1 1 8 0v4"></path></svg></a></li>
+              <li><a href="retirement-paycheck-estimator.html" title="Free, contact info required">Retirement Paycheck Estimator: See If Your Gap Is Covered<svg class="lock-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"></path><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path><path d="M8 11v-4a4 4 0 1 1 8 0v4"></path></svg></a></li>
+              <li><a href="fia-technical-briefing.html" title="Free, contact info required">Institutional Research: For Readers Who Want Every Technical Detail<svg class="lock-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"></path><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path><path d="M8 11v-4a4 4 0 1 1 8 0v4"></path></svg></a></li>
+            </ul>
           </div>
 
-          <div style="grid-column: 1 / -1; margin-top: 3rem;">
-            <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: 24px; font-weight: 600; margin-bottom: 0.75rem;">Additional Reading</h2>
-            <div style="width: 60px; height: 3px; background: var(--gold);"></div>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--slate); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">External</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">8 Best Places to Retire in Texas, According to Real Estate Experts</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Travel + Leisure surveyed real estate agents across Texas for their top picks, from Houston's medical centers to small-town Hill Country charm.</p>
-            <a href="https://www.travelandleisure.com/best-places-to-retire-in-texas-11863229" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read on Travel + Leisure</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--slate); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">External</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">11 Best Road Trips in Texas</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">Eleven scenic itineraries across Texas, from Hill Country wine country to Gulf Coast lighthouses and Big Bend's night skies.</p>
-            <a href="https://www.onlyinyourstate.com/trip-ideas/texas/best-road-trips-in-texas" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read on OnlyInYourState</a>
-          </div>
-          <div class="resource-card">
-            <span style="background: var(--charcoal); color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Biography</span>
-            <h3 style="font-family: var(--font-heading); color: var(--navy); font-size: 17px; font-weight: 600;">More About John</h3>
-            <p style="color: var(--slate); font-size: 13px; line-height: 1.6; margin-top: 0.5rem;">John's personal story, background, and what drives his approach to retirement income planning.</p>
-            <a href="about-john.html" style="margin-top: 1rem; display: block; font-weight: 600; color: var(--gold);">Read Article</a>
-          </div>
         </div>
       </div>
     </section>
