@@ -1120,6 +1120,40 @@ main {
 }
 
 /* Section 6 (index.html) */
+.confidence-section {
+  background: var(--warm-white);
+  padding: 5rem 1.5rem;
+}
+
+.confidence-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.confidence-eyebrow {
+  display: block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.confidence-icon {
+  display: block;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 1.5rem;
+  object-fit: contain;
+}
+
+.confidence-section h2 {
+  font-size: clamp(24px, 3.5vw, 38px);
+}
+
+/* Section 7 (index.html) */
 .calc-cta-section {
   background: var(--navy);
   padding: 5rem 1.5rem;
@@ -1218,7 +1252,7 @@ main {
   margin-top: 1rem;
 }
 
-/* Section 7 (index.html) */
+/* Section 8 (index.html) */
 .strategies-section {
   background: var(--warm-white);
   padding: 5rem 1.5rem;
@@ -1349,7 +1383,7 @@ main {
   text-decoration: underline;
 }
 
-/* Section 8 (index.html) */
+/* Section 9 (index.html) */
 .schedule-cta-section {
   background: var(--soft-gray);
   padding: 5rem 1.5rem;
