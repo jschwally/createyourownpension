@@ -1096,6 +1096,15 @@ main {
   height: 117px;
 }
 
+/* Temporary placeholder sizing for explore.png (3:2 rectangular icon vs.
+   the other two icons' square 1:1 source images) so its rendered height
+   is in line with the other step icons instead of being letterboxed
+   down inside a square box. Revisit once the final icon set is in. */
+.steps-card-icon--wide {
+  width: 225px;
+  height: 150px;
+}
+
 .steps-card-number {
   color: var(--gold);
   font-weight: 700;
