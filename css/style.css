@@ -1150,12 +1150,13 @@ main {
   margin-bottom: 1rem;
 }
 
-.confidence-icon {
+.confidence-photo {
   display: block;
-  width: 220px;
-  height: 220px;
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
   margin: 0 auto 1.5rem;
-  object-fit: contain;
 }
 
 .confidence-section h2 {
