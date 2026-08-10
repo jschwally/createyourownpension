@@ -51,6 +51,10 @@
       margin-bottom: 16px;
     }
 
+    .cyop-hh .profile-header-text .profile-tag {
+      margin-bottom: 0;
+    }
+
     .cyop-hh .profile-line {
       font-size: 14px;
       color: #1F2937;
@@ -271,6 +275,15 @@
       color: var(--slate);
       margin-bottom: 14px;
     }
+
+    .cyop-hh .scenario-picker { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 24px 0 12px; }
+    .cyop-hh .scenario-btn { background: var(--white); border: 1px solid var(--border-subtle); color: var(--charcoal); padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--font-body); }
+    .cyop-hh .scenario-btn.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+    .cyop-hh .scenario-desc { text-align: center; font-size: 14px; color: var(--slate); margin-bottom: 24px; }
+
+    .cyop-hh .profile-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; display: block; border: 2px solid var(--gold); flex-shrink: 0; }
+
+    .cyop-hh .profile-header { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
   </style>
   <!-- Meta Pixel Code -->
   <script>
@@ -319,7 +332,12 @@
       <div>
         <span class="eyebrow">Pension Strategy · Illustration</span>
         <h1>Same $40,000 a Year. Very Different Retirements.</h1>
-        <p>Hope and Helen both retire at 65. Both take $40,000 a year in retirement income for the next 25 years, the same total, the same 25 years, even the same market. The only difference is where that income comes from.</p>
+        <p>
+          Hope and Helen are twins with the same $40,000 income gap to close at 65.
+          One leaves it to the market. The other closes it for good. Pick a real
+          stretch of history and watch what actually happened, using real S&amp;P 500
+          returns, not projections.
+        </p>
       </div>
     </section>
 
@@ -328,22 +346,41 @@
 
         <div class="profile-grid">
           <div class="profile-card hope">
-            <div class="profile-name">Hope</div>
-            <div class="profile-tag">Draws income from her portfolio</div>
+            <div class="profile-header">
+              <img class="profile-photo" src="images/hope.webp" alt="Hope" loading="lazy">
+              <div class="profile-header-text">
+                <div class="profile-name">Hope</div>
+                <div class="profile-tag">Draws income from her portfolio</div>
+              </div>
+            </div>
             <div class="profile-line">Retires at age <strong>65</strong> with a <strong>$1,000,000</strong> portfolio</div>
             <div class="profile-line">Withdraws <strong>$40,000</strong> a year directly from that portfolio</div>
             <div class="profile-line">Her income is <strong>at risk every single year</strong></div>
             <div class="profile-line">Her balance rides the market up and down every year</div>
           </div>
           <div class="profile-card helen">
-            <div class="profile-name">Helen</div>
-            <div class="profile-tag">Draws income from a Pension Strategy</div>
-            <div class="profile-line">Retires at age <strong>65</strong> with a <strong>$500,000</strong> portfolio</div>
+            <div class="profile-header">
+              <img class="profile-photo" src="images/helen.webp" alt="Helen" loading="lazy">
+              <div class="profile-header-text">
+                <div class="profile-name">Helen</div>
+                <div class="profile-tag">Draws income from a Pension Strategy</div>
+              </div>
+            </div>
+            <div class="profile-line">Retires at age <strong>65</strong> with <strong>$466,828</strong> still invested, plus a Pension Strategy paying her income</div>
             <div class="profile-line">Set up her Pension Strategy years earlier to pay her <strong>$40,000</strong> a year, guaranteed</div>
             <div class="profile-line">Her income is <strong>guaranteed, never at risk</strong></div>
             <div class="profile-line">Her portfolio is never touched to generate that income</div>
           </div>
         </div>
+
+        <div class="scenario-picker">
+          <button class="scenario-btn" data-year="1929">1929</button>
+          <button class="scenario-btn" data-year="1966">1966</button>
+          <button class="scenario-btn" data-year="1973">1973</button>
+          <button class="scenario-btn" data-year="1982">1982</button>
+          <button class="scenario-btn active" data-year="2000">2000</button>
+        </div>
+        <p class="scenario-desc" id="scenarioDesc"></p>
 
         <div class="card">
           <h2>25 Years Later</h2>
@@ -359,28 +396,31 @@
 
           <div class="outcome-grid">
             <div class="outcome">
-              <div class="outcome-label">Hope's Portfolio, Age 90</div>
+              <div class="outcome-label">Hope's Portfolio, Age 89</div>
               <div class="outcome-value" id="hopeEnding">$0</div>
-              <div class="outcome-sub">After 25 years of self-funded withdrawals</div>
+              <div class="outcome-sub" id="hopeOutcomeSub">After 25 years of self-funded withdrawals</div>
             </div>
             <div class="outcome">
-              <div class="outcome-label">Helen's Portfolio, Age 90</div>
+              <div class="outcome-label">Helen's Portfolio, Age 89</div>
               <div class="outcome-value" id="helenEnding">$0</div>
               <div class="outcome-sub">Never withdrawn from, grew untouched</div>
             </div>
           </div>
 
           <div class="winner-banner">
-            Both took home the exact same $1,000,000 in total income.
-            <span class="amount" id="helenAdvantage">$0</span>
-            <span class="sub">in excess portfolio growth for Helen, simply because of where her income came from</span>
+            <span id="bannerLead">Both took home $1,000,000 in income over 25 years.</span>
+            <span class="amount" id="portfolioDiff">$0</span>
+            <span class="sub" id="bannerSub">more in Helen's portfolio at 89, on top of income that never wavered</span>
           </div>
 
           <div class="note">
-            <strong>What this doesn't show:</strong> these numbers are flat, they don't increase
-            for inflation, and they don't account for portfolio management fees, both of which
-            would further reduce Hope's ending balance. This illustration also doesn't include
-            what it cost Helen to set up her Pension Strategy years earlier, that's part of
+            <strong>What this doesn't show:</strong> these numbers are flat, they don't adjust
+            for inflation, and they don't account for portfolio management fees. Inflation
+            erodes the buying power of both sisters' income the same way, and management fees
+            would reduce returns on whatever stays invested in the market, Hope's full balance
+            and Helen's remaining portfolio alike. This illustration also doesn't include any
+            ongoing rider fees on Helen's Pension Strategy allocation, or the liquidity
+            restrictions on that money while it's committed to the strategy, both are part of
             the conversation worth having on a call.
           </div>
 
@@ -394,8 +434,8 @@
           </button>
 
           <div class="math-panel" id="mathPanel">
-            <p class="math-caption">
-              Year-by-year detail using actual S&amp;P 500 total returns, 2000&ndash;2024.
+            <p class="math-caption" id="mathCaption">
+              Year-by-year detail using actual S&amp;P 500 total returns.
               Hope's withdrawal is subtracted first, then that year's return is applied to
               what remains. Helen's portfolio simply grows, untouched, at the same market
               returns.
@@ -422,10 +462,12 @@
       <div class="narrow-cta">
         <h2>Which Sister Are You?</h2>
         <p>
-          Hope's strategy worked out, but it meant riding the market's ups and downs to fund
-          every withdrawal for 25 straight years. Helen's income never depended on the market
-          at all, and her portfolio kept growing the whole time. The good news is you don't
-          have to choose between growth and guaranteed income. You can have both.
+          Whether Hope's strategy works out depends on which 25 years she gets. Some
+          stretches, it works out fine. Others, like 1929, it doesn't. Either way, her
+          income rides the market the entire time. Helen's income never depended on the
+          market, in any of these stretches, and her portfolio kept growing right alongside
+          it. The good news is you don't have to choose between growth and guaranteed
+          income. You can have both.
         </p>
 
         <div class="section-cta">
@@ -440,25 +482,20 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <script>
-      // Actual S&P 500 total returns, 2000-2024, dividends reinvested, chronological order.
-      const SP500_RETURNS = [
-        -0.0910, -0.1189, -0.2210, 0.2868, 0.1088,
-         0.0491,  0.1579,  0.0549, -0.3700, 0.2646,
-         0.1506,  0.0211,  0.1600,  0.3239, 0.1369,
-         0.0138,  0.1196,  0.2183, -0.0438, 0.3149,
-         0.1840,  0.2871, -0.1811,  0.2629, 0.2502
-      ];
+      const SP500_BY_YEAR = {2026:13.38,2025:17.88,2024:25.02,2023:26.29,2022:-18.11,2021:28.71,2020:18.40,2019:31.49,2018:-4.38,2017:21.83,2016:11.96,2015:1.38,2014:13.69,2013:32.39,2012:16.00,2011:2.11,2010:15.06,2009:26.46,2008:-37.00,2007:5.49,2006:15.79,2005:4.91,2004:10.88,2003:28.68,2002:-22.10,2001:-11.89,2000:-9.10,1999:21.04,1998:28.58,1997:33.36,1996:22.96,1995:37.58,1994:1.32,1993:10.08,1992:7.62,1991:30.47,1990:-3.10,1989:31.69,1988:16.61,1987:5.25,1986:18.67,1985:31.73,1984:6.27,1983:22.56,1982:21.55,1981:-4.91,1980:32.42,1979:18.44,1978:6.56,1977:-7.18,1976:23.84,1975:37.20,1974:-26.47,1973:-14.66,1972:18.98,1971:14.31,1970:4.01,1969:-8.50,1968:11.06,1967:23.98,1966:-10.06,1965:12.45,1964:16.48,1963:22.80,1962:-8.73,1961:26.89,1960:0.47,1959:11.96,1958:43.36,1957:-10.78,1956:6.56,1955:31.56,1954:52.62,1953:-0.99,1952:18.37,1951:24.02,1950:31.71,1949:18.79,1948:5.50,1947:5.71,1946:-8.07,1945:36.44,1944:19.75,1943:25.90,1942:20.34,1941:-11.59,1940:-9.78,1939:-0.41,1938:31.12,1937:-35.03,1936:33.92,1935:47.67,1934:-1.44,1933:53.99,1932:-8.19,1931:-43.34,1930:-24.90,1929:-8.42,1928:43.61,1927:37.49,1926:11.62};
 
-      const CALENDAR_YEARS = [
-        2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
-        2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
-        2020, 2021, 2022, 2023, 2024
+      const SCENARIOS = [
+        { year: 1929, label: '1929', desc: 'The Great Depression years' },
+        { year: 1966, label: '1966', desc: 'A long stagnant stretch for stocks' },
+        { year: 1973, label: '1973', desc: 'Oil crisis and high inflation' },
+        { year: 1982, label: '1982', desc: 'One of the strongest bull markets on record' },
+        { year: 2000, label: '2000', desc: 'The dot-com crash, right at retirement' }
       ];
 
       const RETIRE_AGE = 65;
       const YEARS = 25;
       const HOPE_START = 1000000;
-      const HELEN_START = 500000;
+      const HELEN_START = 466828;
       const WITHDRAWAL = 40000;
 
       function formatCurrency(value) {
@@ -472,107 +509,146 @@
         btn.classList.toggle('open');
       }
 
-      const hopeLine = [HOPE_START];
-      const helenLine = [HELEN_START];
-      const ages = [RETIRE_AGE];
+      function simulate(startYear) {
+        let hopeBal = HOPE_START;
+        let helenBal = HELEN_START;
+        const hopeLine = [hopeBal];
+        const helenLine = [helenBal];
+        const ages = [RETIRE_AGE - 1];
+        const calendarYears = [];
+        let depletedYear = null;
+        let hopeTotalIncome = 0;
 
-      let hopeBal = HOPE_START;
-      let helenBal = HELEN_START;
+        for (let i = 0; i < YEARS; i++) {
+          const yr = startYear + i;
+          const r = SP500_BY_YEAR[yr] / 100;
+          calendarYears.push(yr);
 
-      for (let i = 0; i < YEARS; i++) {
-        const r = SP500_RETURNS[i];
-
-        if (hopeBal > 0) {
-          hopeBal = Math.max(hopeBal - WITHDRAWAL, 0);
-          hopeBal = hopeBal * (1 + r);
-          if (hopeBal < 0) hopeBal = 0;
-        }
-        hopeLine.push(hopeBal);
-
-        helenBal = helenBal * (1 + r);
-        helenLine.push(helenBal);
-
-        ages.push(RETIRE_AGE + i + 1);
-      }
-
-      const hopeEnding = hopeLine[hopeLine.length - 1];
-      const helenEnding = helenLine[helenLine.length - 1];
-      const advantage = helenEnding - hopeEnding;
-
-      document.getElementById('hopeEnding').textContent = formatCurrency(hopeEnding);
-      document.getElementById('helenEnding').textContent = formatCurrency(helenEnding);
-      document.getElementById('helenAdvantage').textContent = formatCurrency(advantage);
-
-      const tbody = document.getElementById('mathTableBody');
-      for (let i = 0; i < YEARS; i++) {
-        const row = document.createElement('tr');
-        const r = SP500_RETURNS[i];
-        const rClass = r < 0 ? 'negative' : 'positive';
-        row.innerHTML =
-          '<td>' + ages[i + 1] + '</td>' +
-          '<td>' + CALENDAR_YEARS[i] + '</td>' +
-          '<td class="' + rClass + '">' + (r >= 0 ? '+' : '') + (r * 100).toFixed(2) + '%</td>' +
-          '<td>' + formatCurrency(hopeLine[i + 1]) + '</td>' +
-          '<td>' + formatCurrency(helenLine[i + 1]) + '</td>';
-        tbody.appendChild(row);
-      }
-
-      const ctx = document.getElementById('hopeHelenChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ages.map(a => 'Age ' + a),
-          datasets: [
-            {
-              label: "Hope's portfolio",
-              data: hopeLine,
-              borderColor: '#123B6D',
-              backgroundColor: 'transparent',
-              borderWidth: 3,
-              pointRadius: 0,
-              tension: 0.15
-            },
-            {
-              label: "Helen's portfolio",
-              data: helenLine,
-              borderColor: '#C9A227',
-              backgroundColor: 'transparent',
-              borderWidth: 3,
-              pointRadius: 0,
-              tension: 0.15
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: { mode: 'index', intersect: false },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              callbacks: {
-                label: function(context) {
-                  return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              grid: { display: false },
-              ticks: { maxTicksLimit: 8, color: '#4B5563', font: { family: 'Inter', size: 12 } }
-            },
-            y: {
-              grid: { color: '#F2F5F8' },
-              ticks: {
-                color: '#4B5563',
-                font: { family: 'Inter', size: 12 },
-                callback: function(value) { return formatCurrency(value); }
-              }
-            }
+          if (hopeBal > 0) {
+            const actualWithdrawal = Math.min(WITHDRAWAL, hopeBal);
+            hopeTotalIncome += actualWithdrawal;
+            hopeBal = hopeBal - actualWithdrawal;
+            if (hopeBal === 0 && depletedYear === null) depletedYear = yr;
+            hopeBal = hopeBal * (1 + r);
+            if (hopeBal < 0) hopeBal = 0;
           }
+          hopeLine.push(hopeBal);
+
+          helenBal = helenBal * (1 + r);
+          helenLine.push(helenBal);
+
+          ages.push(RETIRE_AGE + i);
         }
+
+        return {
+          hopeLine, helenLine, ages, calendarYears, depletedYear,
+          hopeTotalIncome,
+          helenTotalIncome: WITHDRAWAL * YEARS
+        };
+      }
+
+      let hopeHelenChart = null;
+
+      function render(scenario) {
+        const result = simulate(scenario.year);
+        const hopeEnding = result.hopeLine[result.hopeLine.length - 1];
+        const helenEnding = result.helenLine[result.helenLine.length - 1];
+        const diff = helenEnding - hopeEnding;
+        const helenAhead = diff >= 0;
+
+        document.getElementById('scenarioDesc').textContent =
+          scenario.year + ' to ' + (scenario.year + 24) + ': ' + scenario.desc;
+
+        document.getElementById('mathCaption').textContent =
+          'Year-by-year detail using actual S&P 500 total returns, ' + scenario.year + '–' + (scenario.year + 24) + '. ' +
+          "Hope's withdrawal is subtracted first, then that year's return is applied to what remains. Helen's portfolio simply grows, untouched, at the same market returns.";
+
+        document.getElementById('hopeEnding').textContent = formatCurrency(hopeEnding);
+        document.getElementById('helenEnding').textContent = formatCurrency(helenEnding);
+
+        const hopeSub = document.getElementById('hopeOutcomeSub');
+        if (result.depletedYear) {
+          const yearsShort = (scenario.year + YEARS - 1) - result.depletedYear;
+          hopeSub.textContent = 'Income ran out in ' + result.depletedYear + ', ' + yearsShort + (yearsShort === 1 ? ' year' : ' years') + ' before this stretch ended';
+        } else {
+          hopeSub.textContent = 'After 25 years of self-funded withdrawals';
+        }
+
+        const bannerLead = document.getElementById('bannerLead');
+        const bannerAmount = document.getElementById('portfolioDiff');
+        const bannerSub = document.getElementById('bannerSub');
+
+        if (result.depletedYear) {
+          bannerLead.textContent = "Hope's income ran out in " + result.depletedYear + ". Helen's $1,000,000 in guaranteed income never wavered.";
+        } else {
+          bannerLead.textContent = 'Both took home $1,000,000 in income over 25 years.';
+        }
+        bannerAmount.textContent = formatCurrency(Math.abs(diff));
+        bannerSub.textContent = helenAhead
+          ? "more in Helen's portfolio at 89, on top of income that never wavered"
+          : "more in Hope's portfolio at 89, though her income carried the market's full risk the whole way";
+
+        const tbody = document.getElementById('mathTableBody');
+        tbody.innerHTML = '';
+        for (let i = 0; i < YEARS; i++) {
+          const yr = result.calendarYears[i];
+          const r = SP500_BY_YEAR[yr] / 100;
+          const rClass = r < 0 ? 'negative' : 'positive';
+          const row = document.createElement('tr');
+          row.innerHTML =
+            '<td>' + result.ages[i + 1] + '</td>' +
+            '<td>' + yr + '</td>' +
+            '<td class="' + rClass + '">' + (r >= 0 ? '+' : '') + (r * 100).toFixed(2) + '%</td>' +
+            '<td>' + formatCurrency(result.hopeLine[i + 1]) + '</td>' +
+            '<td>' + formatCurrency(result.helenLine[i + 1]) + '</td>';
+          tbody.appendChild(row);
+        }
+
+        const labels = result.ages.map(function(a) { return 'Age ' + a; });
+        if (hopeHelenChart) {
+          hopeHelenChart.data.labels = labels;
+          hopeHelenChart.data.datasets[0].data = result.hopeLine;
+          hopeHelenChart.data.datasets[1].data = result.helenLine;
+          hopeHelenChart.update();
+        } else {
+          const ctx = document.getElementById('hopeHelenChart').getContext('2d');
+          hopeHelenChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: labels,
+              datasets: [
+                { label: "Hope's portfolio", data: result.hopeLine, borderColor: '#123B6D', backgroundColor: 'transparent', borderWidth: 3, pointRadius: 0, tension: 0.15 },
+                { label: "Helen's portfolio", data: result.helenLine, borderColor: '#C9A227', backgroundColor: 'transparent', borderWidth: 3, pointRadius: 0, tension: 0.15 }
+              ]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              interaction: { mode: 'index', intersect: false },
+              plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: function(context) { return context.dataset.label + ': ' + formatCurrency(context.parsed.y); } } }
+              },
+              scales: {
+                x: { grid: { display: false }, ticks: { maxTicksLimit: 8, color: '#4B5563', font: { family: 'Inter', size: 12 } } },
+                y: { grid: { color: '#F2F5F8' }, ticks: { color: '#4B5563', font: { family: 'Inter', size: 12 }, callback: function(value) { return formatCurrency(value); } } }
+              }
+            }
+          });
+        }
+      }
+
+      document.querySelectorAll('.scenario-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.scenario-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          const year = parseInt(btn.getAttribute('data-year'), 10);
+          const scenario = SCENARIOS.find(function(s) { return s.year === year; });
+          render(scenario);
+        });
       });
+
+      render(SCENARIOS.find(function(s) { return s.year === 2000; }));
     </script>
   </main>
 
