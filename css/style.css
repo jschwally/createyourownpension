@@ -891,20 +891,9 @@ main {
   gap: 0.75rem;
 }
 
-.essential-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: var(--white);
-}
-
 .essential-icon {
-  width: 28px;
-  height: 28px;
+  width: 48px;
+  height: auto;
 }
 
 .essential-label {
