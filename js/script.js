@@ -115,10 +115,10 @@ function cyopGetSessionId() {
 function submitCalcData() {
   var form = document.getElementById('cyop-calc-data-form');
   if (!form) return;
-  var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint");
-  var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint");
-  var health = getVal("healthins") + getVal("medical") + getVal("dental") + getVal("vision");
-  var food = getVal("food");
+  var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint") + getVal("housingother");
+  var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint") + getVal("transportother");
+  var health = getVal("healthins") + getVal("medical") + getVal("dental") + getVal("vision") + getVal("healthother");
+  var food = getVal("food") + getVal("diningout");
   var otherExp = getVal("taxes") + getVal("otherdebt") + getVal("other");
   var expenses = housing + transport + health + food + otherExp;
   var income = getVal("ss1") + getVal("ss2") + getVal("pen1") + getVal("pen2") + getVal("otherinc");
@@ -144,6 +144,10 @@ function submitCalcData() {
   document.getElementById('cyop-f-pen1').value = getVal("pen1");
   document.getElementById('cyop-f-pen2').value = getVal("pen2");
   document.getElementById('cyop-f-otherinc').value = getVal("otherinc");
+  document.getElementById('cyop-f-housingother').value = getVal("housingother");
+  document.getElementById('cyop-f-transportother').value = getVal("transportother");
+  document.getElementById('cyop-f-healthother').value = getVal("healthother");
+  document.getElementById('cyop-f-diningout').value = getVal("diningout");
   document.getElementById('cyop-f-sessionid').value = cyopGetSessionId();
   document.getElementById('cyop-f-gap').value = Math.round(gap);
   document.getElementById('cyop-f-totalexpenses').value = Math.round(expenses);
@@ -164,10 +168,10 @@ document.addEventListener('click', function (e) {
 });
 
 function calcGap() {
-  var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint");
-  var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint");
-  var health = getVal("healthins") + getVal("medical") + getVal("dental") + getVal("vision");
-  var food = getVal("food");
+  var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint") + getVal("housingother");
+  var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint") + getVal("transportother");
+  var health = getVal("healthins") + getVal("medical") + getVal("dental") + getVal("vision") + getVal("healthother");
+  var food = getVal("food") + getVal("diningout");
   var otherExp = getVal("taxes") + getVal("otherdebt") + getVal("other");
 
   document.getElementById("cat-housing-total").textContent = fmt(housing);
