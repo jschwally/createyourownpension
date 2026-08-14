@@ -917,6 +917,12 @@ main {
   }
 }
 
+@media (max-width: 560px) {
+  .trust-pills {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Section 2 (index.html) */
 .question-section {
   background: var(--warm-white);
@@ -960,8 +966,8 @@ main {
 }
 
 .trust-pills {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   margin-top: 1.5rem;
 }
