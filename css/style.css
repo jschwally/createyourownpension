@@ -861,7 +861,7 @@ main {
 
 /* Essentials section (index.html) — between hero and question-section */
 .essentials-section {
-  background: var(--soft-gray);
+  background: var(--warm-white);
   padding: 5rem 1.5rem;
 }
 
@@ -925,7 +925,7 @@ main {
 
 /* Section 2 (index.html) */
 .question-section {
-  background: var(--warm-white);
+  background: var(--soft-gray);
   padding: 5rem 1.5rem;
 }
 
@@ -951,7 +951,7 @@ main {
 
 /* Section 3 (index.html) */
 .origin-section {
-  background: var(--soft-gray);
+  background: var(--warm-white);
   padding: 5rem 1.5rem;
 }
 
@@ -988,6 +988,35 @@ main {
 }
 
 /* Section 4 (index.html) */
+/* NEW SECTION — gap acknowledgment, inserted between Origin and Solution */
+.gap-section {
+  background: var(--soft-gray);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.gap-section .section-inner {
+  max-width: 680px;
+}
+
+.gap-section h2 {
+  font-size: clamp(26px, 3.5vw, 36px);
+  color: var(--navy);
+}
+
+.gap-section p {
+  color: var(--slate);
+  font-size: 18px;
+  line-height: 1.65;
+  margin-top: 1rem;
+}
+
+.gap-section p:last-of-type {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* Section 5 (index.html) */
 .solution-section {
   background: var(--warm-white);
   padding: 5rem 1.5rem;
@@ -1023,7 +1052,7 @@ main {
   color: var(--navy);
 }
 
-/* Section 5 (index.html) */
+/* Section 6 (index.html) */
 .steps-section {
   background: var(--soft-gray);
   padding: 5rem 1.5rem;
@@ -1123,7 +1152,7 @@ main {
   margin-top: 3rem;
 }
 
-/* Section 6 (index.html) */
+/* Section 7 (index.html) */
 .confidence-section {
   background: var(--warm-white);
   padding: 5rem 1.5rem;
@@ -1158,7 +1187,7 @@ main {
   font-size: clamp(24px, 3.5vw, 38px);
 }
 
-/* Section 7 (index.html) */
+/* Section 8 (index.html) */
 .calc-cta-section {
   background: var(--navy);
   padding: 5rem 1.5rem;
@@ -1257,9 +1286,9 @@ main {
   margin-top: 1rem;
 }
 
-/* Section 8 (index.html) */
+/* Section 9 (index.html) */
 .strategies-section {
-  background: var(--warm-white);
+  background: var(--soft-gray);
   padding: 5rem 1.5rem;
 }
 
@@ -1316,7 +1345,7 @@ main {
   line-height: 1.8;
 }
 
-/* Section 9 (index.html) */
+/* Section 10 (index.html) */
 .schedule-cta-section {
   background: var(--soft-gray);
   padding: 5rem 1.5rem;
