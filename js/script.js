@@ -158,6 +158,7 @@ function submitCalcData() {
 document.addEventListener('click', function (e) {
   var link = e.target.closest ? e.target.closest('.cyop-estimator-link') : null;
   if (link) {
+    fbq('track', 'CompleteRegistration');
     e.preventDefault();
     var destination = link.getAttribute('href');
     submitCalcData();
