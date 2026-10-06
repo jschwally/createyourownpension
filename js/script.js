@@ -294,3 +294,23 @@ function calcPension() {
     statusMsg.style.display = "block";
   }
 }
+
+/* Hero video: click-to-load Bunny player.
+   The thumbnail shows until clicked; then the player loads and starts. */
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.querySelector(".hero-video");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var src = btn.getAttribute("data-video-src");
+    if (!src) return;
+    var frame = document.createElement("div");
+    frame.className = "hero-video is-playing";
+    var iframe = document.createElement("iframe");
+    iframe.src = src + "?autoplay=true&preload=true&responsive=true&playsinline=true";
+    iframe.title = "Why Create Your Own Pension?";
+    iframe.allow = "accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen";
+    iframe.allowFullscreen = true;
+    frame.appendChild(iframe);
+    btn.replaceWith(frame);
+  });
+});
