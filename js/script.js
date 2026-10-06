@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var frame = document.createElement("div");
     frame.className = "hero-video is-playing";
     var iframe = document.createElement("iframe");
-    iframe.src = src + "?autoplay=true&preload=true&responsive=true&playsinline=true&captions=en";
+    iframe.src = src + "?autoplay=true&preload=true&responsive=true&playsinline=true&captions=en-auto";
     iframe.title = "Why Create Your Own Pension?";
     iframe.allow = "accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen";
     iframe.allowFullscreen = true;
