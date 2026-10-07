@@ -894,7 +894,7 @@ main {
 
 .hero-video-badge {
   position: absolute;
-  right: 4%;
+  left: 4%;
   bottom: 6%;
   display: inline-flex;
   align-items: center;
