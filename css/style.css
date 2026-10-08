@@ -1150,6 +1150,39 @@ main {
   font-weight: 600;
 }
 
+/* Gap section with photo: photo left, text right, so it alternates with the
+   Guide section above (text left, photo right). Stacks on phones. */
+.gap-section .section-inner.gap-split {
+  max-width: 1040px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+}
+
+.gap-photo {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(11, 39, 71, 0.18);
+}
+
+@media (max-width: 860px) {
+  .gap-section .section-inner.gap-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .gap-split-media {
+    order: 2;
+  }
+}
+
 /* Section 5 (index.html) */
 .solution-section {
   background: var(--warm-white);
