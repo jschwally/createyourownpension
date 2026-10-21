@@ -192,30 +192,26 @@ document.addEventListener("click", function (e) {
   cyopTrack("track", "Schedule");
 });
 
-// CalculatorStarted: once per page load, on the first value entered in any
-// calculator field (calculator.html only -- #gap-status is unique to it).
-document.addEventListener("DOMContentLoaded", function () {
-  var calc = document.querySelector(".calc-wrapper");
-  if (!calc || !document.getElementById("gap-status")) return;
-  function onFirstEntry() {
-    calc.removeEventListener("input", onFirstEntry);
-    calc.removeEventListener("change", onFirstEntry);
-    cyopTrack("trackCustom", "CalculatorStarted");
-  }
-  calc.addEventListener("input", onFirstEntry);
-  calc.addEventListener("change", onFirstEntry);
-});
+// Calculator started (ViewContent): once per page load, the first time any
+// calculator field calls calcGap(). Fires before the gap event below.
+var cyopCalcStartedTracked = false;
+function cyopTrackCalcStarted() {
+  if (cyopCalcStartedTracked) return;
+  cyopCalcStartedTracked = true;
+  cyopTrack("track", "ViewContent");
+}
 
-// GapCalculated: once per page load, the first time calcGap() shows the
-// gap or surplus message.
+// Gap calculated (Search): once per page load, the first time calcGap()
+// shows the gap or surplus message.
 var cyopGapTracked = false;
 function cyopTrackGapCalculated() {
   if (cyopGapTracked) return;
   cyopGapTracked = true;
-  cyopTrack("trackCustom", "GapCalculated");
+  cyopTrack("track", "Search");
 }
 
 function calcGap() {
+  cyopTrackCalcStarted();
   var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint") + getVal("housingother");
   var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint") + getVal("transportother");
   var health = getVal("healthins") + getVal("medical") + getVal("dental") + getVal("vision") + getVal("healthother");
