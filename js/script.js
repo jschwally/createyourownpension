@@ -168,6 +168,53 @@ document.addEventListener('click', function (e) {
   }
 });
 
+// Meta Pixel events. Send the event name only -- never parameters or
+// user-entered values. Skipped quietly if the pixel was blocked.
+function cyopTrack(method, eventName) {
+  if (typeof fbq === "function") {
+    fbq(method, eventName);
+  }
+}
+
+// "schedule.html", "/schedule" or "/schedule/", depending on the host.
+function cyopIsSchedulePage(pathname) {
+  return pathname.replace(/\/+$/, "").split("/").pop().replace(/\.html$/, "") === "schedule";
+}
+
+// Schedule: one shared handler for every link to the booking page, whatever
+// its label, so new CTAs are covered automatically. Not fired from the
+// booking page itself (its own nav/footer self-links).
+document.addEventListener("click", function (e) {
+  var link = e.target.closest ? e.target.closest("a[href]") : null;
+  if (!link || link.origin !== window.location.origin) return;
+  if (!cyopIsSchedulePage(link.pathname)) return;
+  if (cyopIsSchedulePage(window.location.pathname)) return;
+  cyopTrack("track", "Schedule");
+});
+
+// CalculatorStarted: once per page load, on the first value entered in any
+// calculator field (calculator.html only -- #gap-status is unique to it).
+document.addEventListener("DOMContentLoaded", function () {
+  var calc = document.querySelector(".calc-wrapper");
+  if (!calc || !document.getElementById("gap-status")) return;
+  function onFirstEntry() {
+    calc.removeEventListener("input", onFirstEntry);
+    calc.removeEventListener("change", onFirstEntry);
+    cyopTrack("trackCustom", "CalculatorStarted");
+  }
+  calc.addEventListener("input", onFirstEntry);
+  calc.addEventListener("change", onFirstEntry);
+});
+
+// GapCalculated: once per page load, the first time calcGap() shows the
+// gap or surplus message.
+var cyopGapTracked = false;
+function cyopTrackGapCalculated() {
+  if (cyopGapTracked) return;
+  cyopGapTracked = true;
+  cyopTrack("trackCustom", "GapCalculated");
+}
+
 function calcGap() {
   var housing = getVal("mortgage") + getVal("proptax") + getVal("homeins") + getVal("utilities") + getVal("homemaint") + getVal("housingother");
   var transport = getVal("autoloan") + getVal("autoins") + getVal("gasmaint") + getVal("transportother");
@@ -211,6 +258,7 @@ function calcGap() {
     gapEl.textContent = fmt(gap);
     statusEl.innerHTML = '<div class="status-msg gap-msg">You have a monthly income gap of <span id=\'gap-amount\'>' + fmt(gap) + "</span>. That is what we are solving for. <a href='retirement-paycheck-estimator.html?gap=" + Math.round(Math.abs(gap)) + "&sid=" + cyopGetSessionId() + "' class='cyop-estimator-link' style='color:#C9A227;font-weight:600;text-decoration:underline;'>Use the free Retirement Paycheck Estimator</a> to explore how a Pension Strategy could close it.</div>";
     statusEl.style.display = "block";
+    cyopTrackGapCalculated();
     annualLine.textContent = "Annual income gap: " + fmt(gap * 12);
   } else {
     gapCard.className = "result-card green-fill";
@@ -218,6 +266,7 @@ function calcGap() {
     gapEl.textContent = fmt(gap);
     statusEl.innerHTML = '<div class="status-msg">Your guaranteed income covers your essential expenses with a monthly surplus of ' + fmt(gap) + ".</div>";
     statusEl.style.display = "block";
+    cyopTrackGapCalculated();
     annualLine.textContent = "Annual surplus: " + fmt(gap * 12);
   }
   calcPension();
