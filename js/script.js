@@ -244,7 +244,6 @@ function calcGap() {
     gapCard.className = "result-card neutral-fill";
     statusEl.style.display = "none";
     annualLine.textContent = "";
-    calcPension();
     return;
   }
 
@@ -265,7 +264,6 @@ function calcGap() {
     cyopTrackGapCalculated();
     annualLine.textContent = "Annual surplus: " + fmt(gap * 12);
   }
-  calcPension();
 }
 
 function updateManualGap(){
@@ -274,7 +272,13 @@ function updateManualGap(){
   calcPension();
 }
 
+// Pension projection (retirement-paycheck-estimator.html). Does nothing on
+// pages without its fields.
 function calcPension() {
+  if (!document.getElementById("currage") || !document.getElementById("startage") ||
+      !document.getElementById("payouttype") || !document.getElementById("premium")) {
+    return;
+  }
   var currage = parseInt(document.getElementById("currage").value, 10) || 0;
   var startage = parseInt(document.getElementById("startage").value, 10) || 0;
   var payouttype = document.getElementById("payouttype").value;
