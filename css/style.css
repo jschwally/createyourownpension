@@ -1230,17 +1230,6 @@ main {
   text-align: center;
 }
 
-.steps-subheadline {
-  color: var(--slate);
-  font-size: 18px;
-  line-height: 1.65;
-  text-align: center;
-  margin-top: 1rem;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .steps-card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
