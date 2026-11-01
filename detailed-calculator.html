@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Income Gap Calculator - Create Your Own Pension</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1239708754884092');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1239708754884092&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-title" href="index.html">
+        <img src="images/CYOP_logo_w_Texas.png" alt="Create Your Own Pension">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primaryNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="calculator.html">Calculate My Gap</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="schedule.html" class="nav-cta">Schedule A Call</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: PAGE HERO -->
+    <section class="page-hero">
+      <div>
+        <h1>Detailed Income Gap Calculator</h1>
+        <p>Find the difference between what you need each month in retirement and the guaranteed income you already have. That number is your starting point.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: HOW IT WORKS -->
+    <section class="how-it-works">
+      <div class="how-it-works-inner">
+        <h2>2 Inputs, 1 Number</h2>
+        <p class="advisor-note">No personal information required. No obligation. Just clarity.</p>
+
+        <div class="steps-grid">
+          <div class="how-step-card">
+            <div class="how-step-header">
+              <div class="how-step-number">1</div>
+              <h3>Enter Your Essential Expenses</h3>
+            </div>
+            <p>Housing, healthcare, food, transportation and other monthly bills you must cover in retirement.</p>
+          </div>
+          <div class="how-step-card">
+            <div class="how-step-header">
+              <div class="how-step-number">2</div>
+              <h3>Add Your Guaranteed Income</h3>
+            </div>
+            <p>Social Security, pensions, and other income guaranteed to arrive each month.</p>
+          </div>
+        </div>
+
+        <div class="advisor-philosophy">
+          <strong>A note from John</strong>
+          Only you can decide which expenses are essential and how much of your income gap, if any, you want covered by guaranteed income. I will help you understand the options. The decision is always yours.
+        </div>
+
+        <p class="advisor-note">Prefer paper, or have a more complex financial picture to map out? Download the printable <a href="downloads/complete-financial-picture-worksheet.pdf" target="_blank">Financial Picture Worksheet</a>.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CALCULATOR 1 -->
+    <section>
+      <div class="calc-wrapper">
+        <div class="calc-section">
+          <div class="calc-header">
+            <h2>Income Gap Analysis</h2>
+            <p class="calc-disclosure-note">Enter your monthly expenses and guaranteed income below. Your income gap will appear instantly.</p>
+          </div>
+
+          <div class="section-label">Monthly Essential Expenses</div>
+
+          <div class="category-label">Housing <span id="cat-housing-total">$0</span></div>
+          <div class="input-grid">
+            <div class="input-group"><label>Mortgage / Rent</label><input type="number" id="mortgage" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Property Tax</label><input type="number" id="proptax" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Home Insurance</label><input type="number" id="homeins" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Utilities</label><input type="number" id="utilities" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Home Maintenance</label><input type="number" id="homemaint" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Other Expenses</label><input type="number" id="housingother" placeholder="0" oninput="calcGap()"></div>
+          </div>
+
+          <div class="category-label">Transportation <span id="cat-transport-total">$0</span></div>
+          <div class="input-grid">
+            <div class="input-group"><label>Auto Loan / Lease</label><input type="number" id="autoloan" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Auto Insurance</label><input type="number" id="autoins" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Gas &amp; Maintenance</label><input type="number" id="gasmaint" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Other Expenses</label><input type="number" id="transportother" placeholder="0" oninput="calcGap()"></div>
+          </div>
+
+          <div class="category-label">Healthcare <span id="cat-health-total">$0</span></div>
+          <div class="input-grid">
+            <div class="input-group"><label>Health Insurance</label><input type="number" id="healthins" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Medical Out-of-Pocket</label><input type="number" id="medical" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Dental</label><input type="number" id="dental" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Vision / Hearing</label><input type="number" id="vision" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Other Expenses</label><input type="number" id="healthother" placeholder="0" oninput="calcGap()"></div>
+          </div>
+
+          <div class="category-label">Food <span id="cat-food-total">$0</span></div>
+          <div class="input-grid">
+            <div class="input-group"><label>Groceries</label><input type="number" id="food" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Dining Out</label><input type="number" id="diningout" placeholder="0" oninput="calcGap()"></div>
+          </div>
+
+          <div class="category-label">Other Essential <span id="cat-other-total">$0</span></div>
+          <div class="input-grid">
+            <div class="input-group"><label>Income Taxes</label><input type="number" id="taxes" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Other Debt Payments</label><input type="number" id="otherdebt" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Other Expenses</label><input type="number" id="other" placeholder="0" oninput="calcGap()"></div>
+          </div>
+
+          <div class="section-label">Monthly Guaranteed Income</div>
+          <div class="input-grid">
+            <div class="input-group"><label>Social Security — You</label><input type="number" id="ss1" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Social Security — Spouse</label><input type="number" id="ss2" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Pension — You</label><input type="number" id="pen1" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Pension — Spouse</label><input type="number" id="pen2" placeholder="0" oninput="calcGap()"></div>
+            <div class="input-group"><label>Other Guaranteed Income</label><input type="number" id="otherinc" placeholder="0" oninput="calcGap()"></div>
+          </div>
+
+          <hr class="divider">
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="label">Total Essential Expenses</div>
+              <div class="value" id="r-expenses">$0</div>
+            </div>
+            <div class="result-card">
+              <div class="label">Total Guaranteed Income</div>
+              <div class="value" id="r-income">$0</div>
+            </div>
+            <div class="result-card neutral-fill" id="r-gap-card">
+              <div class="label" id="r-gap-label">Monthly Income Gap</div>
+              <div class="value" id="r-gap">$0</div>
+            </div>
+          </div>
+          <div id="gap-status" style="display:none"></div>
+          <div class="annual-line" id="annual-gap-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CLOSING CTA -->
+    <section class="closing-cta">
+      <div class="closing-cta-inner">
+        <h2>Now You Know Your Number<br>Let's Talk About What to Do With It</h2>
+        <p>We'll review your income gap together and explore what a Pension Strategy could look like for your situation.</p>
+        <p>No pressure. No obligation.</p>
+        <div class="closing-cta-buttons">
+          <a href="schedule.html" class="btn btn-gold">Talk Through My Numbers</a>
+        </div>
+        <p class="closing-disclosure">Calculator results are based solely on the information entered and are provided for educational purposes. Results are illustrative and are not a recommendation, contract, or guarantee of benefits.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="images/CYOP_logo_w_Texas.png" alt="Create Your Own Pension">
+        <p class="footer-tagline">Guarantee the Bills. Enjoy the Rest.</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="calculator.html">Calculate My Gap</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Get in Touch</h3>
+        <p><a href="mailto:admin@createyourownpension.org">admin@createyourownpension.org</a></p>
+        <p><a href="schedule.html" class="btn btn-primary">Schedule My Income Analysis</a></p>
+      </div>
+    </div>
+    <div class="footer-legal-bar">
+      <p class="footer-legal-name">John Schwalenberg · Licensed Texas Life and Health Insurance Professional · TDI License #2266812 · Independent Insurance Agent</p>
+      <p>The information on this website is for educational and informational purposes only and does not constitute financial, investment, tax, or legal advice. Insurance products are subject to terms and conditions of the issuing insurance company. Any guarantees are backed solely by the financial strength and claims-paying ability of the issuing insurance company. Product availability varies by state. Licensed in Texas. &copy; 2026 Create Your Own Pension. All rights reserved. <a href="legal.html#disclosures">General Website Disclosures</a>, <a href="legal.html#terms">Terms of Use</a>, <a href="legal.html#privacy">Privacy Policy</a>, and <a href="legal.html#accessibility">Accessibility Statement</a>.</p>
+    </div>
+  </footer>
+
+  <iframe name="cyop_hidden_iframe" style="display:none"></iframe>
+  <form id="cyop-calc-data-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeIlVNoaDREj2tgB0PtGtajMSVga-bVQCBYC-pdfl_rTo0i-Q/formResponse" method="POST" target="cyop_hidden_iframe" style="display:none">
+    <input type="hidden" id="cyop-f-mortgage" name="entry.218496492" value="">
+    <input type="hidden" id="cyop-f-proptax" name="entry.2090359340" value="">
+    <input type="hidden" id="cyop-f-homeins" name="entry.834855553" value="">
+    <input type="hidden" id="cyop-f-utilities" name="entry.967971762" value="">
+    <input type="hidden" id="cyop-f-homemaint" name="entry.752761462" value="">
+    <input type="hidden" id="cyop-f-autoloan" name="entry.1299556683" value="">
+    <input type="hidden" id="cyop-f-autoins" name="entry.683045269" value="">
+    <input type="hidden" id="cyop-f-gasmaint" name="entry.2106935176" value="">
+    <input type="hidden" id="cyop-f-healthins" name="entry.852411964" value="">
+    <input type="hidden" id="cyop-f-medical" name="entry.1738897044" value="">
+    <input type="hidden" id="cyop-f-dental" name="entry.2006270213" value="">
+    <input type="hidden" id="cyop-f-vision" name="entry.2080301180" value="">
+    <input type="hidden" id="cyop-f-food" name="entry.1016004095" value="">
+    <input type="hidden" id="cyop-f-taxes" name="entry.1754416949" value="">
+    <input type="hidden" id="cyop-f-otherdebt" name="entry.332252148" value="">
+    <input type="hidden" id="cyop-f-other" name="entry.525990416" value="">
+    <input type="hidden" id="cyop-f-ss1" name="entry.1300638128" value="">
+    <input type="hidden" id="cyop-f-ss2" name="entry.1648759887" value="">
+    <input type="hidden" id="cyop-f-pen1" name="entry.1986613600" value="">
+    <input type="hidden" id="cyop-f-pen2" name="entry.2091564848" value="">
+    <input type="hidden" id="cyop-f-otherinc" name="entry.1692281023" value="">
+    <input type="hidden" id="cyop-f-housingother" name="entry.1278927208" value="">
+    <input type="hidden" id="cyop-f-transportother" name="entry.855195819" value="">
+    <input type="hidden" id="cyop-f-healthother" name="entry.1225746844" value="">
+    <input type="hidden" id="cyop-f-diningout" name="entry.112925852" value="">
+    <input type="hidden" id="cyop-f-sessionid" name="entry.396594626" value="">
+    <input type="hidden" id="cyop-f-gap" name="entry.1667643623" value="">
+    <input type="hidden" id="cyop-f-totalexpenses" name="entry.723028001" value="">
+    <input type="hidden" id="cyop-f-totalincome" name="entry.472758985" value="">
+    <input type="hidden" id="cyop-f-version" name="entry.1443996847" value="">
+  </form>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

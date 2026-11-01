@@ -152,6 +152,8 @@ function submitCalcData() {
   document.getElementById('cyop-f-gap').value = Math.round(gap);
   document.getElementById('cyop-f-totalexpenses').value = Math.round(expenses);
   document.getElementById('cyop-f-totalincome').value = Math.round(income);
+  var versionField = document.getElementById('cyop-f-version');
+  if (versionField) versionField.value = 'Detailed';
   form.submit();
 }
 
