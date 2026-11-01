@@ -929,11 +929,6 @@ main {
   margin-left: 2px;
 }
 
-.hero-video-time {
-  color: #b8c8db;
-  font-weight: 500;
-}
-
 /* Stacked hero (tablets and phones): headline, video, button, then subheadline.
    .hero-content's children join the .hero-inner grid so they can be reordered. */
 @media (max-width: 860px) {
@@ -958,7 +953,7 @@ main {
   }
 }
 
-/* Phones: compact badge (play + time only) so it stays clear of the title text */
+/* Phones: compact badge so it stays clear of the title text */
 @media (max-width: 560px) {
   .hero-video-badge {
     gap: 6px;
@@ -974,10 +969,6 @@ main {
   .hero-video-play svg {
     width: 12px;
     height: 12px;
-  }
-
-  .hero-video-label {
-    display: none;
   }
 }
 
