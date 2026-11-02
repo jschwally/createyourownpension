@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Retirement Paycheck Planner - Create Your Own Pension</title>
+  <title>Income Gap Calculator - Create Your Own Pension</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,137 +50,115 @@
   </header>
 
   <main>
-    <!-- SECTION 1: PAGE HERO -->
     <section class="page-hero">
       <div>
-        <h1>The Income Gap Calculator</h1>
-        <p>Find the difference between what you need each month in retirement and the guaranteed income you already have. That number is your starting point.</p>
+        <span class="eyebrow">Income Gap Calculator</span>
+        <h1>Does Your Guaranteed Income Cover the Bills?</h1>
+        <p>Estimates are fine. No name or email required.</p>
       </div>
     </section>
 
-    <!-- SECTION 2: HOW IT WORKS -->
-    <section class="how-it-works">
-      <div class="how-it-works-inner">
-        <h2>2 Inputs, 1 Number</h2>
-        <p class="advisor-note">No personal information required. No obligation. Just clarity.</p>
-
-        <div class="steps-grid">
-          <div class="how-step-card">
-            <div class="how-step-header">
-              <div class="how-step-number">1</div>
-              <h3>Enter Your Essential Expenses</h3>
-            </div>
-            <p>Housing, healthcare, food, transportation and other monthly bills you must cover in retirement.</p>
-          </div>
-          <div class="how-step-card">
-            <div class="how-step-header">
-              <div class="how-step-number">2</div>
-              <h3>Add Your Guaranteed Income</h3>
-            </div>
-            <p>Social Security, pensions, and other income guaranteed to arrive each month.</p>
-          </div>
-        </div>
-
-        <div class="advisor-philosophy">
-          <strong>A note from John</strong>
-          Only you can decide which expenses are essential and how much of your income gap, if any, you want covered by guaranteed income. I will help you understand the options. The decision is always yours.
-        </div>
-
-        <p class="advisor-note">Prefer paper, or have a more complex financial picture to map out? Download the printable <a href="downloads/complete-financial-picture-worksheet.pdf" target="_blank">Financial Picture Worksheet</a>.</p>
-      </div>
-    </section>
-
-    <!-- SECTION 3: CALCULATOR 1 -->
     <section>
-      <div class="calc-wrapper">
+      <div class="calc-wrapper sc-wrapper">
         <div class="calc-section">
           <div class="calc-header">
-            <h2>Income Gap Analysis</h2>
-            <p class="calc-disclosure-note">Enter your monthly expenses and guaranteed income below. Your income gap will appear instantly.</p>
+            <h2>Your Essential Monthly Expenses</h2>
           </div>
-
-          <div class="section-label">Monthly Essential Expenses</div>
-
-          <div class="category-label">Housing <span id="cat-housing-total">$0</span></div>
-          <div class="input-grid">
-            <div class="input-group"><label>Mortgage / Rent</label><input type="number" id="mortgage" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Property Tax</label><input type="number" id="proptax" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Home Insurance</label><input type="number" id="homeins" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Utilities</label><input type="number" id="utilities" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Home Maintenance</label><input type="number" id="homemaint" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Other Expenses</label><input type="number" id="housingother" placeholder="0" oninput="calcGap()"></div>
-          </div>
-
-          <div class="category-label">Transportation <span id="cat-transport-total">$0</span></div>
-          <div class="input-grid">
-            <div class="input-group"><label>Auto Loan / Lease</label><input type="number" id="autoloan" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Auto Insurance</label><input type="number" id="autoins" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Gas &amp; Maintenance</label><input type="number" id="gasmaint" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Other Expenses</label><input type="number" id="transportother" placeholder="0" oninput="calcGap()"></div>
-          </div>
-
-          <div class="category-label">Healthcare <span id="cat-health-total">$0</span></div>
-          <div class="input-grid">
-            <div class="input-group"><label>Health Insurance</label><input type="number" id="healthins" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Medical Out-of-Pocket</label><input type="number" id="medical" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Dental</label><input type="number" id="dental" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Vision / Hearing</label><input type="number" id="vision" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Other Expenses</label><input type="number" id="healthother" placeholder="0" oninput="calcGap()"></div>
-          </div>
-
-          <div class="category-label">Food <span id="cat-food-total">$0</span></div>
-          <div class="input-grid">
-            <div class="input-group"><label>Groceries</label><input type="number" id="food" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Dining Out</label><input type="number" id="diningout" placeholder="0" oninput="calcGap()"></div>
-          </div>
-
-          <div class="category-label">Other Essential <span id="cat-other-total">$0</span></div>
-          <div class="input-grid">
-            <div class="input-group"><label>Income Taxes</label><input type="number" id="taxes" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Other Debt Payments</label><input type="number" id="otherdebt" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Other Expenses</label><input type="number" id="other" placeholder="0" oninput="calcGap()"></div>
-          </div>
-
-          <div class="section-label">Monthly Guaranteed Income</div>
-          <div class="input-grid">
-            <div class="input-group"><label>Social Security — You</label><input type="number" id="ss1" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Social Security — Spouse</label><input type="number" id="ss2" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Pension — You</label><input type="number" id="pen1" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Pension — Spouse</label><input type="number" id="pen2" placeholder="0" oninput="calcGap()"></div>
-            <div class="input-group"><label>Other Guaranteed Income</label><input type="number" id="otherinc" placeholder="0" oninput="calcGap()"></div>
-          </div>
-
-          <hr class="divider">
-          <div class="results-grid">
-            <div class="result-card">
-              <div class="label">Total Essential Expenses</div>
-              <div class="value" id="r-expenses">$0</div>
+          <div class="sc-fields">
+            <div class="input-group sc-field">
+              <label for="sc-housing">Housing</label>
+              <p class="sc-help" id="sc-housing-help">Mortgage or rent, property tax, home insurance, and utilities</p>
+              <div class="sc-money">
+                <span aria-hidden="true">$</span>
+                <input type="text" inputmode="decimal" id="sc-housing" placeholder="0" autocomplete="off" aria-describedby="sc-housing-help">
+              </div>
             </div>
-            <div class="result-card">
-              <div class="label">Total Guaranteed Income</div>
-              <div class="value" id="r-income">$0</div>
+            <div class="input-group sc-field">
+              <label for="sc-healthcare">Healthcare</label>
+              <p class="sc-help" id="sc-healthcare-help">Insurance premiums (including Medicare), plus medical, dental, vision, and hearing costs</p>
+              <div class="sc-money">
+                <span aria-hidden="true">$</span>
+                <input type="text" inputmode="decimal" id="sc-healthcare" placeholder="0" autocomplete="off" aria-describedby="sc-healthcare-help">
+              </div>
             </div>
-            <div class="result-card neutral-fill" id="r-gap-card">
-              <div class="label" id="r-gap-label">Monthly Income Gap</div>
-              <div class="value" id="r-gap">$0</div>
+            <div class="input-group sc-field">
+              <label for="sc-groceries">Groceries</label>
+              <p class="sc-help" id="sc-groceries-help">Food and household basics</p>
+              <div class="sc-money">
+                <span aria-hidden="true">$</span>
+                <input type="text" inputmode="decimal" id="sc-groceries" placeholder="0" autocomplete="off" aria-describedby="sc-groceries-help">
+              </div>
+            </div>
+            <div class="input-group sc-field">
+              <label for="sc-transportation">Transportation</label>
+              <p class="sc-help" id="sc-transportation-help">Car payment, gas, auto insurance, and maintenance</p>
+              <div class="sc-money">
+                <span aria-hidden="true">$</span>
+                <input type="text" inputmode="decimal" id="sc-transportation" placeholder="0" autocomplete="off" aria-describedby="sc-transportation-help">
+              </div>
+            </div>
+            <div class="input-group sc-field">
+              <label for="sc-other">Other essentials</label>
+              <p class="sc-help" id="sc-other-help">Phone, internet, debt payments, or anything else you have to pay. Enter 0 if none.</p>
+              <div class="sc-money">
+                <span aria-hidden="true">$</span>
+                <input type="text" inputmode="decimal" id="sc-other" placeholder="0" autocomplete="off" aria-describedby="sc-other-help">
+              </div>
             </div>
           </div>
-          <div id="gap-status" style="display:none"></div>
-          <div class="annual-line" id="annual-gap-line"></div>
+          <div class="sc-total">
+            <span>Essential expenses</span>
+            <span class="sc-total-value" id="sc-expenses-total" aria-live="polite">$0</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- SECTION 6: CLOSING CTA -->
-    <section class="closing-cta">
-      <div class="closing-cta-inner">
-        <h2>Now You Know Your Number<br>Let's Talk About What to Do With It</h2>
-        <p>We'll review your income gap together and explore what a Pension Strategy could look like for your situation.</p>
-        <p>No pressure. No obligation.</p>
-        <div class="closing-cta-buttons">
-          <a href="schedule.html" class="btn btn-gold">Talk Through My Numbers</a>
+        <div class="calc-section">
+          <div class="calc-header">
+            <h2>Your Guaranteed Monthly Income</h2>
+          </div>
+          <div class="sc-fields">
+            <div class="input-group sc-field">
+              <label for="sc-social-security">Social Security</label>
+              <p class="sc-help" id="sc-social-security-help">Include your spouse's if you're married. An estimate is fine.</p>
+              <div class="sc-money">
+                <span aria-hidden="true">$</span>
+                <input type="text" inputmode="decimal" id="sc-social-security" placeholder="0" autocomplete="off" aria-describedby="sc-social-security-help">
+              </div>
+            </div>
+            <div class="input-group sc-field">
+              <label for="sc-pension">Pension or other guaranteed income</label>
+              <p class="sc-help" id="sc-pension-help">Pensions or existing annuity income. Enter 0 if none.</p>
+              <div class="sc-money">
+                <span aria-hidden="true">$</span>
+                <input type="text" inputmode="decimal" id="sc-pension" placeholder="0" autocomplete="off" aria-describedby="sc-pension-help">
+              </div>
+            </div>
+          </div>
+          <div class="sc-total">
+            <span>Guaranteed income</span>
+            <span class="sc-total-value" id="sc-income-total" aria-live="polite">$0</span>
+          </div>
         </div>
-        <p class="closing-disclosure">Calculator results are based solely on the information entered and are provided for educational purposes. Results are illustrative and are not a recommendation, contract, or guarantee of benefits.</p>
+
+        <div class="section-cta">
+          <button type="button" class="btn btn-secondary" id="sc-show-gap">Show My Gap</button>
+        </div>
+
+        <div class="calc-section sc-results" id="sc-results" tabindex="-1" hidden>
+          <div id="sc-result-gap" hidden>
+            <p class="sc-result-label">Your monthly income gap</p>
+            <p class="sc-result-amount" id="sc-gap-amount"></p>
+            <p>That's <span id="sc-gap-annual"></span> a year your guaranteed income doesn't cover.</p>
+            <p>The good news: a gap can be closed. On a 30-minute call, we'll look at how much of it could be covered with guaranteed income, and what that might look like for you.</p>
+          </div>
+          <div id="sc-result-covered" hidden>
+            <p class="sc-result-headline">Your guaranteed income covers your essential expenses.</p>
+            <p>That's a strong position. A short call can confirm it holds up against inflation, healthcare costs, and the loss of a spouse's income.</p>
+          </div>
+          <a href="schedule.html" class="btn btn-primary">Talk Through My Numbers</a>
+          <p class="sc-more"><a href="resources.html">Want more detail? Explore our free tools and guides</a></p>
+          <p class="sc-disclosure">Results are illustrative only and based on the figures you enter. Not a guarantee of benefits. Licensed in Texas. TDI License #2266812.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -213,38 +191,16 @@
   </footer>
 
   <iframe name="cyop_hidden_iframe" style="display:none"></iframe>
-  <form id="cyop-calc-data-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeIlVNoaDREj2tgB0PtGtajMSVga-bVQCBYC-pdfl_rTo0i-Q/formResponse" method="POST" target="cyop_hidden_iframe" style="display:none">
-    <input type="hidden" id="cyop-f-mortgage" name="entry.218496492" value="">
-    <input type="hidden" id="cyop-f-proptax" name="entry.2090359340" value="">
-    <input type="hidden" id="cyop-f-homeins" name="entry.834855553" value="">
-    <input type="hidden" id="cyop-f-utilities" name="entry.967971762" value="">
-    <input type="hidden" id="cyop-f-homemaint" name="entry.752761462" value="">
-    <input type="hidden" id="cyop-f-autoloan" name="entry.1299556683" value="">
-    <input type="hidden" id="cyop-f-autoins" name="entry.683045269" value="">
-    <input type="hidden" id="cyop-f-gasmaint" name="entry.2106935176" value="">
-    <input type="hidden" id="cyop-f-healthins" name="entry.852411964" value="">
-    <input type="hidden" id="cyop-f-medical" name="entry.1738897044" value="">
-    <input type="hidden" id="cyop-f-dental" name="entry.2006270213" value="">
-    <input type="hidden" id="cyop-f-vision" name="entry.2080301180" value="">
-    <input type="hidden" id="cyop-f-food" name="entry.1016004095" value="">
-    <input type="hidden" id="cyop-f-taxes" name="entry.1754416949" value="">
-    <input type="hidden" id="cyop-f-otherdebt" name="entry.332252148" value="">
-    <input type="hidden" id="cyop-f-other" name="entry.525990416" value="">
-    <input type="hidden" id="cyop-f-ss1" name="entry.1300638128" value="">
-    <input type="hidden" id="cyop-f-ss2" name="entry.1648759887" value="">
-    <input type="hidden" id="cyop-f-pen1" name="entry.1986613600" value="">
-    <input type="hidden" id="cyop-f-pen2" name="entry.2091564848" value="">
-    <input type="hidden" id="cyop-f-otherinc" name="entry.1692281023" value="">
-    <input type="hidden" id="cyop-f-housingother" name="entry.1278927208" value="">
-    <input type="hidden" id="cyop-f-transportother" name="entry.855195819" value="">
-    <input type="hidden" id="cyop-f-healthother" name="entry.1225746844" value="">
-    <input type="hidden" id="cyop-f-diningout" name="entry.112925852" value="">
-    <input type="hidden" id="cyop-f-sessionid" name="entry.396594626" value="">
-    <input type="hidden" id="cyop-f-gap" name="entry.1667643623" value="">
-    <input type="hidden" id="cyop-f-totalexpenses" name="entry.723028001" value="">
-    <input type="hidden" id="cyop-f-totalincome" name="entry.472758985" value="">
+  <form id="sc-data-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeIlVNoaDREj2tgB0PtGtajMSVga-bVQCBYC-pdfl_rTo0i-Q/formResponse" method="POST" target="cyop_hidden_iframe" style="display:none">
+    <input type="hidden" id="sc-f-sessionid" name="entry.396594626" value="">
+    <input type="hidden" id="sc-f-gap" name="entry.1667643623" value="">
+    <input type="hidden" id="sc-f-totalexpenses" name="entry.723028001" value="">
+    <input type="hidden" id="sc-f-totalincome" name="entry.472758985" value="">
+    <input type="hidden" id="sc-f-groceries" name="entry.1016004095" value="">
+    <input type="hidden" id="sc-f-version" name="entry.1443996847" value="">
   </form>
 
   <script src="js/script.js"></script>
+  <script src="js/simple-calc.js"></script>
 </body>
 </html>

@@ -2342,3 +2342,118 @@ footer h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Simple Income Gap Calculator (calculator.html) */
+.sc-wrapper {
+  max-width: 640px;
+}
+
+.sc-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sc-field label {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.sc-help {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+.sc-money {
+  position: relative;
+  margin-top: 4px;
+}
+
+.sc-money span {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--slate);
+  pointer-events: none;
+}
+
+.sc-money input {
+  height: 44px;
+  padding-left: 26px;
+  font-size: 18px;
+}
+
+.sc-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid #e5e7eb;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.sc-total-value {
+  font-size: 20px;
+}
+
+.sc-results {
+  margin-top: 1.5rem;
+  text-align: center;
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+.sc-results:focus {
+  outline: none;
+}
+
+.sc-results p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.sc-results .sc-result-label {
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.sc-results .sc-result-amount {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 8vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.sc-results .sc-result-headline {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--navy);
+}
+
+.sc-results .btn {
+  margin-top: 0.5rem;
+}
+
+.sc-results .sc-more {
+  margin: 1rem 0 0;
+  font-size: 15px;
+}
+
+.sc-results .sc-disclosure {
+  margin: 1rem 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--slate);
+}
