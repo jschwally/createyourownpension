@@ -1947,6 +1947,10 @@ footer h3 {
 
 .legal-section h3 { font-size: 16px; }
 .legal-section p { font-size: 13px; color: var(--slate); }
+.legal-section ul { margin: 0.5rem 0 0; padding-left: 1.25rem; font-size: 13px; color: var(--slate); }
+.legal-section li + li { margin-top: 0.35rem; }
+.legal-section .faq-item p + p { margin-top: 0.75rem; }
+.legal-section .faq-item + .faq-item { margin-top: 1.5rem; }
 
 .section-label {
   font-size: 12px;
