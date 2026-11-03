@@ -122,34 +122,56 @@
           <label for="cf-message">Message (optional)</label>
           <textarea id="cf-message" name="message" rows="4"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p id="cf-error-message" class="form-error" role="alert" hidden>We couldn't send your message. Please try again, or email <a href="mailto:admin@createyourownpension.org">admin@createyourownpension.org</a>.</p>
+        <button type="submit" class="btn btn-primary" id="cf-submit">Send Message</button>
       </form>
       <p id="cf-success-message" class="form-success" style="display:none;">Thanks! Your message has been sent. John will be in touch soon.</p>
     </section>
 
     <script>
-    document.getElementById('cyop-contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
+    // Contact form. The request is no-cors, so the Apps Script's reply can't be
+    // read: "sent" means the request finished without a network error. Lead
+    // fires once, only then. A failed send keeps the form and what was typed.
+    (function () {
+      var form = document.getElementById('cyop-contact-form');
+      var submitBtn = document.getElementById('cf-submit');
+      var errorEl = document.getElementById('cf-error-message');
+      var submitLabel = submitBtn.textContent;
+      var sending = false, leadTracked = false;
 
-      var name = document.getElementById('cf-name').value;
-      var email = document.getElementById('cf-email').value;
-      var phone = document.getElementById('cf-phone').value;
-      var message = document.getElementById('cf-message').value;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (sending) return;
+        sending = true;
+        errorEl.hidden = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-      fetch('https://script.google.com/macros/s/AKfycby8XzgISOnCxQJbd52zbFiF9SzD0Cc-oDk3U698FNGKiarClrEUVxs91O11t-y_lN_tMQ/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, phone: phone, message: message })
+        var name = document.getElementById('cf-name').value;
+        var email = document.getElementById('cf-email').value;
+        var phone = document.getElementById('cf-phone').value;
+        var message = document.getElementById('cf-message').value;
+
+        fetch('https://script.google.com/macros/s/AKfycby8XzgISOnCxQJbd52zbFiF9SzD0Cc-oDk3U698FNGKiarClrEUVxs91O11t-y_lN_tMQ/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, phone: phone, message: message })
+        }).then(function () {
+          if (!leadTracked && typeof cyopTrack === 'function') {
+            leadTracked = true;
+            cyopTrack('track', 'Lead');
+          }
+          form.style.display = 'none';
+          document.getElementById('cf-success-message').style.display = 'block';
+        }).catch(function () {
+          sending = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitLabel;
+          errorEl.hidden = false;
+        });
       });
-
-      if (typeof fbq === 'function') {
-        fbq('track', 'Lead');
-      }
-
-      document.getElementById('cyop-contact-form').style.display = 'none';
-      document.getElementById('cf-success-message').style.display = 'block';
-    });
+    })();
     </script>
 
     <section class="section section--navy">
