@@ -584,7 +584,7 @@ main {
 .cta-disclosure {
   max-width: 40rem;
   margin: 1rem auto 0;
-  font-size: 0.78rem;
+  font-size: 13px;
   color: var(--slate);
 }
 
@@ -1395,12 +1395,6 @@ main {
   margin-top: 0.75rem;
 }
 
-.calc-cta-disclosure {
-  color: #6B7280;
-  font-size: 12px;
-  margin-top: 1rem;
-}
-
 /* Section 9 (index.html) */
 .strategies-section {
   background: var(--soft-gray);
@@ -1638,7 +1632,7 @@ footer h3 {
   max-width: var(--max-width);
   margin: 0 auto 0.35rem;
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 13px;
   line-height: 1.4;
   color: var(--slate);
 }
@@ -2223,7 +2217,7 @@ footer h3 {
 
 .required-premium-box .text .sub {
   font-size: 12px;
-  color: #9ca3af;
+  color: var(--slate);
   margin-top: 3px;
 }
 
@@ -2309,8 +2303,8 @@ footer h3 {
 }
 
 .closing-cta .closing-disclosure {
-  font-size: 11px;
-  color: var(--slate);
+  font-size: 13px;
+  color: #b8c8db;
   line-height: 1.6;
 }
 
