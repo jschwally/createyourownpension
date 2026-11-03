@@ -253,7 +253,7 @@ function calcGap() {
     gapCard.className = "result-card red-fill";
     gapLabel.textContent = "Monthly Income Gap";
     gapEl.textContent = fmt(gap);
-    statusEl.innerHTML = '<div class="status-msg gap-msg">You have a monthly income gap of <span id=\'gap-amount\'>' + fmt(gap) + "</span>. That is what we are solving for. <a href='retirement-paycheck-estimator.html?gap=" + Math.round(Math.abs(gap)) + "&sid=" + cyopGetSessionId() + "' class='cyop-estimator-link' style='color:#C9A227;font-weight:600;text-decoration:underline;'>Use the free Retirement Paycheck Estimator</a> to explore how a Pension Strategy could close it.</div>";
+    statusEl.innerHTML = '<div class="status-msg gap-msg">You have a monthly income gap of <span id=\'gap-amount\'>' + fmt(gap) + "</span>. That is what we are solving for. <a href='retirement-paycheck-estimator.html?gap=" + Math.round(Math.abs(gap)) + "&sid=" + cyopGetSessionId() + "' class='cyop-estimator-link' style='color:#C9A227;font-weight:600;text-decoration:underline;'>Use the free Retirement Paycheck Estimator</a> to explore how a Pension Strategy could close it.<p class='cta-disclosure'>If you continue, the amounts you enter are saved and may be linked to the contact information you provide on the next page. See our <a href='legal.html#privacy'>Privacy Policy</a>.</p></div>";
     statusEl.style.display = "block";
     cyopTrackGapCalculated();
     annualLine.textContent = "Annual income gap: " + fmt(gap * 12);

@@ -1,6 +1,7 @@
 // Simple Income Gap Calculator, used on calculator.html only. Wrapped in a
 // function so its names can't collide with the globals in js/script.js, which
-// must load first (cyopGetSessionId, cyopTrackCalcStarted, cyopTrackGapCalculated).
+// must load first (cyopTrackCalcStarted, cyopTrackGapCalculated). Sends no
+// session ID, so rows from this page can't be matched to contact details.
 (function () {
   var expenseIds = ["sc-housing", "sc-healthcare", "sc-groceries", "sc-transportation", "sc-other"];
   var incomeIds = ["sc-social-security", "sc-pension"];
@@ -45,7 +46,6 @@
     if (amounts === lastSubmitted) return;
     lastSubmitted = amounts;
 
-    document.getElementById("sc-f-sessionid").value = cyopGetSessionId();
     document.getElementById("sc-f-gap").value = Math.round(income - expenses);
     document.getElementById("sc-f-totalexpenses").value = Math.round(expenses);
     document.getElementById("sc-f-totalincome").value = Math.round(income);
