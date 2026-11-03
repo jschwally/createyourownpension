@@ -2114,27 +2114,6 @@ footer h3 {
   background: #b08d20;
 }
 
-.cta-btn-secondary {
-  display: block;
-  width: 100%;
-  margin-top: 0.75rem;
-  background: transparent;
-  color: var(--navy);
-  border: 1px solid var(--navy);
-  border-radius: var(--radius-btn);
-  padding: 11px;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: var(--font-body);
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-
-.cta-btn-secondary:hover {
-  background: var(--soft-gray);
-}
-
 .disclosure {
   font-size: 11px;
   color: #9ca3af;
