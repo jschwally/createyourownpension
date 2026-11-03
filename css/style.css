@@ -2447,6 +2447,24 @@ footer h3 {
   color: var(--navy);
 }
 
+/* Quiet personal note in the gap result, lighter than the amount and button */
+.sc-results .sc-note {
+  max-width: 32rem;
+  margin: 0 auto 1.5rem;
+  font-style: italic;
+  color: var(--slate);
+}
+
+.sc-results .sc-note p {
+  font-size: 15px;
+  color: var(--slate);
+  margin: 0;
+}
+
+.sc-results .sc-note .sc-note-signature {
+  margin-top: 0.25rem;
+}
+
 .sc-results .btn {
   margin-top: 0.5rem;
 }
