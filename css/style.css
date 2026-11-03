@@ -1943,6 +1943,37 @@ footer h3 {
   margin-top: 6px;
 }
 
+/* Built-in gate form on retirement-paycheck-estimator.html. Field styling
+   comes from .contact-form/.form-group (schedule.html). */
+.est-gate-form {
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.est-gate-required-note {
+  font-size: 13px;
+  color: var(--slate);
+  margin: 0 0 1rem;
+}
+
+.est-gate-required {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.est-gate-error {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 1rem;
+}
+
+.est-gate-form .btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 .gate-disclosure-note {
   font-size: 13px;
   color: var(--slate);

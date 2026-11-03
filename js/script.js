@@ -157,12 +157,26 @@ function submitCalcData() {
   form.submit();
 }
 
+// Estimator handoff: gap and session ID go to retirement-paycheck-estimator.html
+// through sessionStorage (this tab only), never the URL, so they don't reach
+// Meta's PageView, browser history or server logs. The estimator reads this
+// same key; keep the two in sync.
+var CYOP_HANDOFF_KEY = 'cyop_estimator_handoff';
+
 document.addEventListener('click', function (e) {
   var link = e.target.closest ? e.target.closest('.cyop-estimator-link') : null;
   if (link) {
-    fbq('track', 'CompleteRegistration');
     e.preventDefault();
     var destination = link.getAttribute('href');
+    try {
+      sessionStorage.setItem(CYOP_HANDOFF_KEY, JSON.stringify({
+        gap: Math.round(Math.abs(monthlyGap)),
+        sid: cyopGetSessionId(),
+        t: Date.now()
+      }));
+    } catch (err) {
+      // Storage unavailable: continue without prefill.
+    }
     submitCalcData();
     setTimeout(function () {
       window.location.href = destination;
@@ -253,7 +267,7 @@ function calcGap() {
     gapCard.className = "result-card red-fill";
     gapLabel.textContent = "Monthly Income Gap";
     gapEl.textContent = fmt(gap);
-    statusEl.innerHTML = '<div class="status-msg gap-msg">You have a monthly income gap of <span id=\'gap-amount\'>' + fmt(gap) + "</span>. That is what we are solving for. <a href='retirement-paycheck-estimator.html?gap=" + Math.round(Math.abs(gap)) + "&sid=" + cyopGetSessionId() + "' class='cyop-estimator-link' style='color:#C9A227;font-weight:600;text-decoration:underline;'>Use the free Retirement Paycheck Estimator</a> to explore how a Pension Strategy could close it.<p class='cta-disclosure'>If you continue, the amounts you enter are saved and may be linked to the contact information you provide on the next page. See our <a href='legal.html#privacy'>Privacy Policy</a>.</p></div>";
+    statusEl.innerHTML = '<div class="status-msg gap-msg">You have a monthly income gap of <span id=\'gap-amount\'>' + fmt(gap) + "</span>. That is what we are solving for. <a href='retirement-paycheck-estimator.html' class='cyop-estimator-link' style='color:#C9A227;font-weight:600;text-decoration:underline;'>Use the free Retirement Paycheck Estimator</a> to explore how a Pension Strategy could close it.<p class='cta-disclosure'>If you continue, the amounts you enter are saved and may be linked to the contact information you provide on the next page. See our <a href='legal.html#privacy'>Privacy Policy</a>.</p></div>";
     statusEl.style.display = "block";
     cyopTrackGapCalculated();
     annualLine.textContent = "Annual income gap: " + fmt(gap * 12);

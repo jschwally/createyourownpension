@@ -63,10 +63,32 @@
     <section id="gateSection" style="background: var(--warm-white); padding: 3rem 1.5rem;">
       <div style="max-width: 640px; margin: 0 auto; text-align: center;">
         <h2 style="font-family: var(--font-heading); color: var(--navy); font-size: clamp(20px, 3vw, 28px);">Access the Tool</h2>
-        <p style="color: var(--slate); font-size: 16px; line-height: 1.7; margin-top: 1rem; margin-bottom: 2rem;">Enter your information below for free access to the Pension Income Projection Calculator. No obligation. We may follow up to see if you have any questions.</p>
+        <p style="color: var(--slate); font-size: 16px; line-height: 1.7; margin-top: 1rem; margin-bottom: 2rem;">Enter your information below for free access to the Retirement Paycheck Estimator. No obligation. We may follow up to see if you have any questions.</p>
         <p style="color: var(--slate); font-size: 13px; margin-bottom: 1rem;">If you came here from the detailed calculator, submitting this form links your numbers to your contact details, so we can speak directly to them on your call.</p>
-        <iframe id="gateFormFrame" width="100%" height="870" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-        <p style="margin-top: 1rem;"><a href="#" id="gateManualUnlock" style="color: var(--gold); font-weight: 600;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>I already submitted the form</a></p>
+        <!-- Built-in gate form. Posts to the "Tool Access Request" Google Form
+             through the hidden iframe below; the inline script at the end of
+             this page validates, submits and unlocks. Field names are that
+             form's entry IDs; keep them in sync if the form's questions change. -->
+        <form id="estGateForm" class="contact-form est-gate-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdE-1BrIUwN2nw_zocL58haiXUwgwxRw9je-6d9UqIuyROIGQ/formResponse" method="POST" target="est_gate_iframe" novalidate>
+          <p class="est-gate-required-note"><span class="est-gate-required" aria-hidden="true">*</span> Required</p>
+          <div class="form-group">
+            <label for="est-gate-name">Name <span class="est-gate-required" aria-hidden="true">*</span></label>
+            <input type="text" id="est-gate-name" name="entry.1336506643" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="est-gate-email">Email <span class="est-gate-required" aria-hidden="true">*</span></label>
+            <input type="email" id="est-gate-email" name="entry.2056517907" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label for="est-gate-phone">Phone <span class="est-gate-required" aria-hidden="true">*</span></label>
+            <input type="tel" id="est-gate-phone" name="entry.2146313719" autocomplete="tel" inputmode="tel" required>
+          </div>
+          <input type="hidden" name="entry.1550005308" value="Paycheck Estimator">
+          <input type="hidden" id="est-gate-session" name="entry.363577213" value="">
+          <p id="est-gate-error" class="est-gate-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary" id="est-gate-submit">Get Free Access</button>
+        </form>
+        <iframe name="est_gate_iframe" id="est-gate-iframe" title="Form submission" tabindex="-1" aria-hidden="true" style="display:none"></iframe>
       </div>
     </section>
 
@@ -186,14 +208,102 @@
 
   <script src="js/script.js"></script>
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const gapParam = urlParams.get('gap');
-    const sidParam = urlParams.get('sid');
-    var gateBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdE-1BrIUwN2nw_zocL58haiXUwgwxRw9je-6d9UqIuyROIGQ/viewform?embedded=true&usp=pp_url&entry.1550005308=Paycheck+Estimator";
-    if (sidParam) {
-      gateBaseUrl += "&entry.363577213=" + encodeURIComponent(sidParam);
+    // Gap and session ID arrive from the detailed calculator through
+    // sessionStorage (see CYOP_HANDOFF_KEY in js/script.js), never the URL.
+    // Ignored if missing, malformed or older than 30 minutes.
+    var gapParam = null, sidParam = null;
+    try {
+      var handoff = JSON.parse(sessionStorage.getItem(CYOP_HANDOFF_KEY) || 'null');
+      if (handoff && Date.now() - handoff.t < 30 * 60 * 1000) {
+        if (handoff.gap > 0) gapParam = String(handoff.gap);
+        if (typeof handoff.sid === 'string' && /^sid_[\w]+$/.test(handoff.sid)) sidParam = handoff.sid;
+      }
+    } catch (err) {
+      // Storage unavailable or bad data: no prefill.
     }
-    document.getElementById('gateFormFrame').src = gateBaseUrl;
+    // Gate (this page only). sor-tool.html and fia-technical-briefing.html use
+    // the shared gate in js/script.js, which does nothing here because this
+    // page has no #gateFormFrame. The unlocked flag lives in sessionStorage
+    // (this tab only), keyed without ".html" so clean URLs share it.
+    (function () {
+      var gateKey = 'cyopGateUnlocked:' + window.location.pathname.replace(/\/+$/, '').replace(/\.html$/, '');
+      var gateSection = document.getElementById('gateSection');
+      var toolContent = document.getElementById('gateToolContent');
+      var form = document.getElementById('estGateForm');
+      var frame = document.getElementById('est-gate-iframe');
+      var phone = document.getElementById('est-gate-phone');
+      var submitBtn = document.getElementById('est-gate-submit');
+      var errorEl = document.getElementById('est-gate-error');
+      var submitLabel = submitBtn.textContent;
+      var pending = false, tracked = false, timer = null;
+
+      function unlock(moveFocus) {
+        gateSection.style.display = 'none';
+        toolContent.style.display = '';
+        if (moveFocus) {
+          var heading = toolContent.querySelector('h2');
+          toolContent.scrollIntoView({ block: 'start' });
+          if (heading) {
+            heading.setAttribute('tabindex', '-1');
+            heading.focus({ preventScroll: true });
+          }
+        }
+      }
+
+      var alreadyUnlocked = false;
+      try { alreadyUnlocked = sessionStorage.getItem(gateKey) === '1'; } catch (err) {}
+      if (alreadyUnlocked) {
+        unlock(false);
+        return;
+      }
+
+      if (sidParam) document.getElementById('est-gate-session').value = sidParam;
+
+      // Phone must have 10 to 15 digits; spaces, dashes, dots, brackets and + are fine.
+      function checkPhone() {
+        var digits = phone.value.replace(/\D/g, '').length;
+        phone.setCustomValidity(phone.value.trim() === '' || (digits >= 10 && digits <= 15) ? '' : 'Please enter a phone number with at least 10 digits.');
+      }
+      phone.addEventListener('input', checkPhone);
+
+      function showError() {
+        pending = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+        errorEl.textContent = "We couldn't confirm your request. Please try again, or email admin@createyourownpension.org.";
+        errorEl.hidden = false;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (pending) return;
+        checkPhone();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        pending = true;
+        errorEl.hidden = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        timer = setTimeout(showError, 15000);
+        form.submit();
+      });
+
+      // Google's reply loading in the hidden iframe means the response arrived.
+      frame.addEventListener('load', function () {
+        if (!pending) return;
+        pending = false;
+        clearTimeout(timer);
+        if (!tracked) {
+          tracked = true;
+          cyopTrack('track', 'CompleteRegistration');
+        }
+        try { sessionStorage.setItem(gateKey, '1'); } catch (err) {}
+        unlock(true);
+      });
+    })();
+
     if(gapParam && document.getElementById('manualGap')){
       document.getElementById('manualGap').value = gapParam;
       const event = new Event('input');
