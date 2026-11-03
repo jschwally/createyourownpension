@@ -26,6 +26,11 @@
   box-sizing: border-box;
 }
 
+/* Anchor-link targets land below the sticky header instead of under it */
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
