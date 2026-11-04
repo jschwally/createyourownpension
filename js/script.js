@@ -333,21 +333,21 @@ function calcPension() {
 
     if (remaining >= 0) {
       remainCard.className = "result-card green-fill";
-      remainLabel.textContent = "Monthly Surplus";
+      remainLabel.textContent = "Above Your Goal";
       remainValue.textContent = fmt(remaining);
       statusMsg.className = "status-msg";
-      statusMsg.textContent = "This premium amount generates enough income to cover your essential expenses for life.";
+      statusMsg.textContent = "This premium amount could generate enough income to reach your monthly goal for life.";
       reqBox.style.display = "none";
     } else {
       remainCard.className = "result-card red-fill";
-      remainLabel.textContent = "Remaining Monthly Gap";
+      remainLabel.textContent = "Still Needed to Reach Your Goal";
       remainValue.textContent = fmt(remaining);
       var annualGapNeeded = Math.abs(monthlyGap) * 12;
       var requiredPremium = annualGapNeeded / (rollupFactor * rate);
       document.getElementById("required-premium-amount").textContent = fmt(requiredPremium);
       reqBox.style.display = "flex";
       statusMsg.className = "status-msg gap-msg";
-      statusMsg.textContent = "A larger premium or later income start date may be needed to fully close your gap. Schedule a call to explore your options.";
+      statusMsg.textContent = "A larger premium or a later income start age may help you reach your goal. Your Income Analysis is a good place to explore your options.";
     }
     remainingGrid.style.display = "grid";
     statusMsg.style.display = "block";
