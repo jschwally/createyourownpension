@@ -1785,24 +1785,6 @@ footer h3 {
   line-height: 1.6;
 }
 
-.advisor-philosophy {
-  background: #fff;
-  border: 1.5px solid var(--gold);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  font-size: 14px;
-  color: var(--charcoal);
-  line-height: 1.65;
-}
-
-.advisor-philosophy strong {
-  color: var(--navy);
-  display: block;
-  margin-bottom: 0.4rem;
-  font-family: var(--font-heading);
-  font-size: 16px;
-}
-
 .callout-gold {
   background: #fff;
   border-left: 4px solid var(--gold);
