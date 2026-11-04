@@ -24,7 +24,7 @@ Then visit `http://localhost:8000/index.html`.
 - `js/simple-calc.js` — logic for the simple calculator, loaded only on `calculator.html`, after `js/script.js`.
 - HTML files reference `/favicon.ico` and `/favicon-32x32.png` as root-absolute paths. **Both now exist at the project root** (confirmed `test -f`) — the earlier note that they 404'd is stale; don't re-flag this without checking first.
 - `images/` — static image assets.
-- `sitemap.xml` and `robots.txt` (site root). `sitemap.xml` lists every public page as `https://www.createyourownpension.org/<page>.html` (`.html` URLs, matching how the site links pages) with a `<lastmod>` date. **Update `sitemap.xml` whenever a page is added, removed or renamed**, and bump `<lastmod>` for pages whose content changes. `robots.txt` allows all crawlers and points to the sitemap.
+- `sitemap.xml` and `robots.txt` (site root). `sitemap.xml` lists the home page as `https://www.createyourownpension.org/` and every other public page as `https://www.createyourownpension.org/<page>.html` (`.html` URLs, matching how the site links pages), each with a `<lastmod>` date. **Update `sitemap.xml` whenever a page is added, removed or renamed**, and bump `<lastmod>` for pages whose content changes. `robots.txt` allows all crawlers and points to the sitemap.
 
 ## Conventions
 
