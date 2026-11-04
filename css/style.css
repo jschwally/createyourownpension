@@ -1191,14 +1191,14 @@ main {
 
 .steps-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
 @media (max-width: 640px) {
   .steps-card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -1222,6 +1222,7 @@ main {
   display: block;
   width: 130px;
   height: 130px;
+  max-width: 100%;
   object-fit: contain;
 }
 
