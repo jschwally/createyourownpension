@@ -168,6 +168,29 @@ nav a.nav-cta:hover {
   opacity: 0.9;
 }
 
+/* Home link: house icon only on desktop; icon + "Home" in the mobile menu.
+   The SVG strokes with currentColor, so the nav a hover/aria-current colors apply to it. */
+nav a.nav-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  vertical-align: middle;
+  /* Balances the 4px padding + 2px border below the icon, so the icon centres on the text line
+     and its aria-current underline lines up with the text links' underlines. */
+  margin-top: 6px;
+}
+
+.nav-home-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-home-label {
+  display: none;
+}
+
 /* Mobile navigation */
 @media (max-width: 860px) {
   .nav-toggle {
@@ -214,6 +237,15 @@ nav a.nav-cta:hover {
   nav a.nav-cta {
     display: inline-block;
     margin-top: 0.5rem;
+  }
+
+  nav a.nav-home {
+    display: flex;
+    margin-top: 0;
+  }
+
+  .nav-home-label {
+    display: inline;
   }
 }
 
