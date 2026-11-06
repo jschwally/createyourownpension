@@ -191,6 +191,12 @@ nav a.nav-home {
   display: none;
 }
 
+@media (max-width: 940px) {
+  .site-title img {
+    height: 44px;
+  }
+}
+
 /* Mobile navigation */
 @media (max-width: 860px) {
   .nav-toggle {
@@ -249,7 +255,7 @@ nav a.nav-home {
   }
 
   .site-title img {
-    height: 40px;
+    height: 32px;
   }
 }
 
@@ -1592,8 +1598,10 @@ footer h3 {
 }
 
 .footer-logo {
-  height: 52px;
+  height: auto;
+  max-height: 52px;
   width: auto;
+  max-width: 100%;
   margin-bottom: 0.5rem;
   filter: none;
 }
