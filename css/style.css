@@ -191,6 +191,12 @@ nav a.nav-home {
   display: none;
 }
 
+@media (max-width: 1000px) {
+  .site-title img {
+    height: 40px;
+  }
+}
+
 /* Mobile navigation */
 @media (max-width: 860px) {
   .nav-toggle {
@@ -246,6 +252,16 @@ nav a.nav-home {
 
   .nav-home-label {
     display: inline;
+  }
+
+  .site-title img {
+    height: 34px;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-title img {
+    height: 28px;
   }
 }
 
