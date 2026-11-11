@@ -846,6 +846,15 @@ main {
   margin-top: 1rem;
 }
 
+.hero-bridge {
+  max-width: var(--max-width);
+  margin: 3rem auto 0;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.4vw, 26px);
+}
+
 .hero-ctas {
   display: flex;
   flex-direction: column;
