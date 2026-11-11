@@ -838,6 +838,14 @@ main {
   margin-top: 1.25rem;
 }
 
+.hero-tagline {
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
 .hero-ctas {
   display: flex;
   flex-direction: column;
@@ -955,6 +963,7 @@ main {
   .hero-media { order: 3; margin-top: 1.5rem; }
   .hero-ctas { order: 4; margin-top: 1.5rem; }
   .hero-subheadline { order: 5; margin-top: 1.5rem; margin-bottom: 0; }
+  .hero-tagline { order: 6; margin-top: 1rem; margin-bottom: 0; text-align: left; }
 
   .hero-eyebrow,
   .hero-content h1,
