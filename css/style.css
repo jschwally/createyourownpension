@@ -1260,8 +1260,8 @@ main {
 .steps-card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 640px) {
@@ -1273,35 +1273,35 @@ main {
 .steps-card {
   background: var(--warm-white);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem 1.5rem 1.25rem;
   border-top: 4px solid var(--gold);
   text-align: center;
 }
 
 .steps-card-icon-wrap {
-  height: 160px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .steps-card-icon {
   display: block;
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
   max-width: 100%;
   object-fit: contain;
 }
 
 .steps-card-icon--large {
-  width: 176px;
-  height: 176px;
+  width: 120px;
+  height: 120px;
 }
 
 .steps-card-icon--small {
-  width: 117px;
-  height: 117px;
+  width: 100px;
+  height: 100px;
 }
 
 /* Temporary placeholder sizing for explore.png (3:2 rectangular icon vs.
@@ -1309,8 +1309,8 @@ main {
    is in line with the other step icons instead of being letterboxed
    down inside a square box. Revisit once the final icon set is in. */
 .steps-card-icon--wide {
-  width: 225px;
-  height: 150px;
+  width: 165px;
+  height: 110px;
 }
 
 .steps-card-number {
@@ -1322,18 +1322,20 @@ main {
   color: var(--navy);
   font-size: 20px;
   font-weight: 600;
-  margin-top: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .steps-card p {
   color: var(--slate);
-  line-height: 1.7;
-  margin-top: 0.75rem;
+  line-height: 1.55;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
 }
 
 .steps-cta {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 /* Section 7 (index.html) */
