@@ -1118,6 +1118,14 @@ main {
   margin-top: 1rem;
 }
 
+.origin-lead {
+  margin-top: 0;
+}
+
+.origin-cta {
+  margin-top: 2rem;
+}
+
 .trust-pills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
