@@ -1355,6 +1355,27 @@ main {
   color: var(--navy);
 }
 
+.pension-callout--payoff {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--charcoal);
+  padding: 1.5rem 1.75rem;
+}
+
+.pension-callout--payoff p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.pension-callout--payoff .pension-callout-close {
+  margin-top: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--navy);
+}
+
 /* Section 6 (index.html) */
 .steps-section {
   background: var(--soft-gray);
