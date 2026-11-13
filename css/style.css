@@ -1252,6 +1252,61 @@ main {
   box-shadow: 0 12px 32px rgba(11, 39, 71, 0.18);
 }
 
+.hiw-gap {
+  background: var(--soft-gray);
+  padding: 5rem 1.5rem;
+}
+
+.hiw-gap-split {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hiw-gap h2 {
+  font-size: clamp(24px, 3.5vw, 38px);
+}
+
+.hiw-gap-statement {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  text-align: center;
+}
+
+.hiw-gap-bridge {
+  max-width: 800px;
+  margin: 2.5rem auto 0;
+  text-align: center;
+  color: var(--navy);
+  font-family: var(--font-heading);
+  font-size: clamp(21px, 2.6vw, 30px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.hiw-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.hiw-cta .btn {
+  min-width: 240px;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .hiw-gap-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 860px) {
   .gap-section .section-inner.gap-split {
     grid-template-columns: 1fr;
