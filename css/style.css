@@ -1376,6 +1376,26 @@ main {
   color: var(--navy);
 }
 
+.hiw-payoff {
+  max-width: 1040px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hiw-payoff .pension-callout {
+  margin-top: 0;
+}
+
+@media (max-width: 860px) {
+  .hiw-payoff {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 /* Section 6 (index.html) */
 .steps-section {
   background: var(--soft-gray);
