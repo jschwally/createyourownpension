@@ -1667,7 +1667,7 @@ main {
 
 /* Section 9 (index.html) */
 .strategies-section {
-  background: var(--soft-gray);
+  background: var(--warm-white);
   padding: 5rem 1.5rem;
 }
 
@@ -1748,6 +1748,22 @@ main {
 
 .schedule-cta-section h2 {
   font-size: clamp(24px, 3.5vw, 38px);
+}
+
+.fomo-lead {
+  color: var(--charcoal);
+  font-size: 18px;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 1rem auto 0;
+}
+
+#schedule .reason-list {
+  margin-top: 1.75rem;
+}
+
+.fomo-cta {
+  margin-top: 2rem;
 }
 
 .schedule-cta-subheadline {
