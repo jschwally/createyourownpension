@@ -1308,9 +1308,9 @@ main {
 }
 
 .hiw-gap-statement {
-  max-width: 720px;
+  max-width: 1040px;
   margin: 2.5rem auto 0;
-  text-align: center;
+  text-align: left;
 }
 
 .hiw-gap-bridge {
