@@ -853,6 +853,7 @@ main {
   color: var(--white);
   font-family: var(--font-heading);
   font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
 }
 
 .hero-ctas {
