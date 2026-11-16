@@ -1821,6 +1821,7 @@ main {
   line-height: 1.65;
   max-width: 640px;
   margin: 1rem auto 0;
+  text-align: left;
 }
 
 #schedule .reason-list {
