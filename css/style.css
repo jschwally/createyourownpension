@@ -1329,6 +1329,11 @@ main {
   line-height: 1.35;
 }
 
+.hiw-gap-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
 .hiw-cta {
   display: flex;
   flex-direction: column;
