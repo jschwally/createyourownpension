@@ -1162,11 +1162,16 @@ main {
 }
 
 .question-card .question-list li {
-  font-size: clamp(20px, 2.5vw, 26px);
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.9vw, 20px);
+  font-weight: 500;
 }
 
 .question-card .question-intro {
-  font-size: 19px;
+  font-family: var(--font-heading);
+  color: var(--navy);
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 600;
 }
 
 @media (max-width: 860px) {
