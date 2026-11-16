@@ -1826,6 +1826,10 @@ main {
 
 #schedule .reason-list {
   margin-top: 1.75rem;
+  display: flex;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fomo-cta {
