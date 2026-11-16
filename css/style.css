@@ -1577,6 +1577,26 @@ main {
   margin-top: 2rem;
 }
 
+.steps-teaser {
+  text-align: center;
+  margin: 1.25rem auto 0;
+  max-width: 640px;
+  color: var(--slate);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.steps-teaser a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#hope-helen {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
 /* Section 7 (index.html) */
 .confidence-section {
   background: var(--warm-white);
@@ -1705,9 +1725,9 @@ main {
   margin-top: 0.75rem;
 }
 
-/* Section 9 (index.html) */
+/* Hope & Helen (how-it-works.html) */
 .strategies-section {
-  background: var(--warm-white);
+  background: var(--soft-gray);
   padding: 5rem 1.5rem;
 }
 
@@ -1764,9 +1784,9 @@ main {
   line-height: 1.8;
 }
 
-/* Section 10 (index.html) */
+/* Closing section (index.html) */
 .schedule-cta-section {
-  background: var(--soft-gray);
+  background: var(--warm-white);
   padding: 5rem 1.5rem;
 }
 
