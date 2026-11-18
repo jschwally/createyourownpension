@@ -2798,3 +2798,8 @@ footer h3 {
   line-height: 1.5;
   color: var(--slate);
 }
+
+@media (min-width: 861px) {
+  .hero-inner { align-items: start; }
+  .hero-media .hero-ctas { align-items: center; margin-top: 1.5rem; }
+}
