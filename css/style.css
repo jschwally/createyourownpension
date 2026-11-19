@@ -957,7 +957,7 @@ main {
   margin-left: 2px;
 }
 
-/* Stacked hero (tablets and phones): headline, video, button, then subheadline.
+/* Stacked hero (tablets and phones): headline, video, subheadline, tagline, then button.
    .hero-content's children join the .hero-inner grid so they can be reordered. */
 @media (max-width: 860px) {
   .hero .hero-inner {
@@ -971,7 +971,7 @@ main {
   .hero-eyebrow { order: 1; }
   .hero-content h1 { order: 2; margin-bottom: 0; }
   .hero-media { order: 3; margin-top: 1.5rem; }
-  .hero-ctas { order: 4; margin-top: 1.5rem; }
+  .hero-ctas { order: 7; margin-top: 1.5rem; }
   .hero-subheadline { order: 5; margin-top: 1.5rem; margin-bottom: 0; }
   .hero-tagline { order: 6; margin-top: 1rem; margin-bottom: 0; text-align: left; }
 
@@ -1009,7 +1009,7 @@ main {
   }
 
   .hero-ctas {
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
@@ -2801,5 +2801,4 @@ footer h3 {
 
 @media (min-width: 861px) {
   .hero-inner { align-items: start; }
-  .hero-media .hero-ctas { align-items: center; margin-top: 1.5rem; }
 }
