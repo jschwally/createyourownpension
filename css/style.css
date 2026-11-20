@@ -1740,7 +1740,7 @@ main {
 
 /* Hope & Helen (how-it-works.html) */
 .strategies-section {
-  background: var(--soft-gray);
+  background: var(--warm-white);
   padding: 5rem 1.5rem;
 }
 
@@ -2804,4 +2804,45 @@ footer h3 {
 
 @media (min-width: 861px) {
   .hero-inner { align-items: start; }
+}
+
+/* How It Works: step labels and Step 2 options */
+.hiw-step {
+  display: block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.hiw-options {
+  background: var(--warm-white);
+  padding: 3.5rem 1.5rem;
+}
+
+.hiw-options-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hiw-options h2 {
+  font-size: clamp(24px, 3.5vw, 38px);
+  margin-bottom: 1rem;
+}
+
+.hiw-options-intro {
+  max-width: 760px;
+}
+
+.hiw-options .hiw-work-card h3 {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 17px;
+  margin: 0;
+}
+
+.pension-callout--payoff {
+  background: var(--white);
 }
