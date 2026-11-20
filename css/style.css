@@ -1740,7 +1740,7 @@ main {
 
 /* Hope & Helen (how-it-works.html) */
 .strategies-section {
-  background: var(--warm-white);
+  background: var(--soft-gray);
   padding: 5rem 1.5rem;
 }
 
@@ -2818,7 +2818,7 @@ footer h3 {
 }
 
 .hiw-options {
-  background: var(--warm-white);
+  background: var(--soft-gray);
   padding: 3.5rem 1.5rem;
 }
 
@@ -2843,6 +2843,64 @@ footer h3 {
   margin: 0;
 }
 
-.pension-callout--payoff {
-  background: var(--white);
+
+/* How It Works: three-step charts and Step 3 */
+.hiw-chart {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(11, 39, 71, 0.10);
+}
+
+.hiw-chart-caption {
+  text-align: center;
+  font-size: 13px;
+  color: var(--slate);
+  margin-top: 0.75rem;
+}
+
+.hiw-gap-close {
+  max-width: 1040px;
+  margin: 1.5rem auto 0;
+}
+
+.hiw-options-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.hiw-create {
+  background: var(--warm-white);
+  padding: 3.5rem 1.5rem;
+}
+
+.hiw-create h2 {
+  font-size: clamp(24px, 3.5vw, 38px);
+  margin-bottom: 1rem;
+}
+
+.hiw-create-body,
+.hiw-create-links {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+}
+
+.hiw-create-sub {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  font-size: clamp(20px, 2.6vw, 26px);
+  margin: 0 0 1rem;
+}
+
+@media (max-width: 860px) {
+  .hiw-options-top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
