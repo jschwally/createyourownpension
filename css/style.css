@@ -866,6 +866,7 @@ main {
 
 .bridge-banner { background: var(--midnight); border-top: 4px solid var(--gold); padding: 3.5rem 1.5rem; text-align: center; }
 .bridge-banner h2 { max-width: 1000px; margin: 0 auto; color: var(--white); font-family: var(--font-heading); font-size: clamp(32px, 5vw, 52px); line-height: 1.15; font-weight: 700; }
+.bridge-banner--section h2 { font-size: clamp(24px, 3.5vw, 38px); line-height: 1.25; }
 
 .hero-microcopy {
   color: #b8c8db;
