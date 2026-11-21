@@ -3036,3 +3036,109 @@ footer h3 {
     height: 72px;
   }
 }
+
+/* When $266,586 Equals $1 Million (pension-vs-portfolio-illustration.html) */
+.pvp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.pvp-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(11, 39, 71, 0.08);
+}
+
+.pvp-card-head {
+  padding: 0.9rem 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.pvp-card--gold .pvp-card-head { background: var(--gold); color: var(--midnight); }
+.pvp-card--navy .pvp-card-head { background: var(--navy); }
+
+.pvp-card-body {
+  padding: 0.5rem 1.25rem 1.25rem;
+}
+
+.pvp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pvp-label {
+  font-size: 15px;
+  color: var(--slate);
+}
+
+.pvp-val {
+  font-weight: 700;
+  color: var(--navy);
+  text-align: right;
+}
+
+.pvp-card--gold { border-top: 0; }
+
+.pvp-val--big {
+  font-size: 18px;
+}
+
+.pvp-note {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  background: var(--soft-gray);
+  border-left: 3px solid var(--navy);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.pvp-banner {
+  margin-top: 1.5rem;
+  background: var(--navy);
+  border-top: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.pvp-banner-main {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+}
+
+.pvp-banner-main span { color: var(--gold); }
+
+.pvp-banner-sub {
+  margin-top: 0.4rem;
+  color: #b8c8db;
+  font-size: 16px;
+}
+
+.pvp-math {
+  max-width: 760px;
+  margin: 1rem auto;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .pvp-grid { grid-template-columns: 1fr; }
+}
