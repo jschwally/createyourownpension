@@ -2949,3 +2949,90 @@ footer h3 {
 .hiw-build-steps strong {
   color: var(--navy);
 }
+
+/* Hope & Helen, simplified single-story version (the-process.html) */
+.hh2 {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hh2-intro,
+.hh2-helen {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+  max-width: 720px;
+  margin: 1.5rem auto 0;
+}
+
+.hh2-intro p,
+.hh2-helen p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--charcoal);
+}
+
+.hh2-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--white);
+  box-shadow: 0 6px 18px rgba(11, 39, 71, 0.15);
+}
+
+.hh2-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.hh2-stat {
+  background: var(--white);
+  border-top: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(11, 39, 71, 0.08);
+}
+
+.hh2-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.hh2-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--slate);
+}
+
+.hh2-note {
+  max-width: 720px;
+  margin: 1.75rem auto;
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .hh2-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hh2-photo {
+    width: 72px;
+    height: 72px;
+  }
+}
