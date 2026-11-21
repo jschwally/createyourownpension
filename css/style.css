@@ -2887,8 +2887,13 @@ footer h3 {
 
 .hiw-create-body,
 .hiw-create-links {
-  max-width: 760px;
+  max-width: 1040px;
   margin: 2.5rem auto 0;
+}
+
+.hiw-create-body > *,
+.hiw-create-links > * {
+  max-width: 760px;
 }
 
 .hiw-create-sub {
