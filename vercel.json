@@ -1,4 +1,8 @@
 {
   "cleanUrls": false,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/how-it-works.html", "destination": "/the-process.html", "permanent": true },
+    { "source": "/how-it-works", "destination": "/the-process.html", "permanent": true }
+  ]
 }
