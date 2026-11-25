@@ -816,7 +816,7 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 3rem;
 }
@@ -867,6 +867,7 @@ main {
 .bridge-banner { background: var(--midnight); border-top: 4px solid var(--gold); padding: 3.5rem 1.5rem; text-align: center; }
 .bridge-banner h2 { max-width: 1000px; margin: 0 auto; color: var(--white); font-family: var(--font-heading); font-size: clamp(32px, 5vw, 52px); line-height: 1.15; font-weight: 700; }
 .bridge-banner--section h2 { font-size: clamp(24px, 3.5vw, 38px); line-height: 1.25; }
+.bridge-banner--oneline h2 { font-size: clamp(24px, 3.3vw, 36px); max-width: 1040px; }
 
 .hero-microcopy {
   color: #b8c8db;
@@ -2805,6 +2806,7 @@ footer h3 {
 
 @media (min-width: 861px) {
   .hero-inner { align-items: start; }
+  .hero-content h1 { font-size: clamp(32px, 4vw, 46px); }
 }
 
 /* How It Works: step labels and Step 2 options */
@@ -3142,3 +3144,15 @@ footer h3 {
 @media (max-width: 700px) {
   .pvp-grid { grid-template-columns: 1fr; }
 }
+
+/* Home closing section: text left, couple-and-dog photo right (desktop). */
+.schedule-cta-layout { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center; }
+.schedule-cta-layout .schedule-cta-inner { max-width: none; margin: 0; text-align: left; }
+.schedule-cta-layout .fomo-lead, .schedule-cta-layout .reason-list { margin-left: 0; margin-right: 0; }
+.schedule-cta-layout .trust-indicators--center { display: flex; }
+@media (max-width: 860px) {
+  .schedule-cta-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .schedule-cta-media { order: -1; }
+  .schedule-cta-media .gap-photo { max-width: 100%; }
+}
+.origin-callout .origin-cta { margin-top: 1.25rem; }
